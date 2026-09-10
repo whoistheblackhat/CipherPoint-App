@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../core/theme/cipherpoint_theme.dart';
-import '../../core/api/api_client.dart';
-import '../../shared/models/models.dart';
 import '../auth/auth_provider.dart';
+import '../../core/api/api_client.dart';
+import '../../core/theme/cipherpoint_theme.dart';
+import '../../shared/models/models.dart';
 
 final profileProvider =
     FutureProvider.family<Map<String, dynamic>, int>((ref, userId) async {
-  final client = ref.watch(apiClientProvider);
+  final ApiClient client = ref.watch(apiClientProvider);
   return client.getProfile(userId);
 });
 
@@ -20,8 +20,8 @@ class ProfileScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authState = ref.watch(authStateProvider);
-    final user = authState.value;
+    final AsyncValue<CPUser?> authState = ref.watch(authStateProvider);
+    final CPUser? user = authState.value;
 
     if (user == null) {
       return Scaffold(
@@ -34,7 +34,8 @@ class ProfileScreen extends ConsumerWidget {
       );
     }
 
-    final profileAsync = ref.watch(profileProvider(user.id));
+    final AsyncValue<Map<String, dynamic>> profileAsync =
+        ref.watch(profileProvider(user.id));
 
     return Scaffold(
       appBar: AppBar(title: const Text('Profile')),
@@ -62,8 +63,8 @@ class ProfileScreen extends ConsumerWidget {
             ),
           ],
         ),
-        loading: () => _ProfileSkeleton(),
-        error: (e, _) => _ErrorState(
+        loading: _ProfileSkeleton.new,
+        error: (Object e, _) => _ErrorState(
           error: e.toString(),
           onRetry: () => ref.invalidate(profileProvider),
         ),
@@ -103,7 +104,7 @@ class _ProfileHeader extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (user.isAdmin == true)
+              if (user.isAdmin ?? false)
                 Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
@@ -172,14 +173,22 @@ class _ProfileHeader extends StatelessWidget {
               ),
               const SizedBox(width: CPSpacing.xl),
               _StatColumn(
-                  label: 'Coins',
-                  value: '${user.coins ?? 0}',
-                  color: CPColors.amber),
+                label: 'Coins',
+                value: '${user.coins ?? 0}',
+                color: CPColors.amber,
+              ),
             ],
           ),
         ],
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('user', user));
+    properties.add(DiagnosticsProperty('profile', profile));
   }
 }
 
@@ -188,18 +197,23 @@ class _StatColumn extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatColumn(
-      {required this.label, required this.value, required this.color});
+  const _StatColumn({required this.label, required this.value, required this.color});
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(value, style: CPTextStyles.headlineSmall.copyWith(color: color)),
-        const SizedBox(height: 4),
-        Text(label, style: CPTextStyles.bodySmall),
-      ],
-    );
+  Widget build(BuildContext context) => Column(
+        children: [
+          Text(value, style: CPTextStyles.headlineSmall.copyWith(color: color)),
+          const SizedBox(height: 4),
+          Text(label, style: CPTextStyles.bodySmall),
+        ],
+      );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('label', label));
+    properties.add(DiagnosticsProperty('value', value));
+    properties.add(DiagnosticsProperty('color', color));
   }
 }
 
@@ -255,6 +269,12 @@ class _ProfileStats extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('profile', profile));
+  }
 }
 
 class _StatItem extends StatelessWidget {
@@ -303,6 +323,15 @@ class _StatItem extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('icon', icon));
+    properties.add(DiagnosticsProperty('label', label));
+    properties.add(DiagnosticsProperty('value', value));
+    properties.add(DiagnosticsProperty('color', color));
+  }
 }
 
 class _ProfileBadges extends StatelessWidget {
@@ -312,7 +341,7 @@ class _ProfileBadges extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final badges = <String>[];
+    final List<String> badges = <String>[];
     if ((profile['solved_count'] ?? 0) >= 1) badges.add('Rookie');
     if ((profile['solved_count'] ?? 0) >= 3) badges.add('Resolver');
     if ((profile['rank_points'] ?? 0) >= 1000) badges.add('Investigator');
@@ -354,9 +383,17 @@ class _ProfileBadges extends StatelessWidget {
         return Icons.star;
     }
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('profile', profile));
+  }
 }
 
 class _ProfileActions extends StatelessWidget {
+  const _ProfileActions();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -396,9 +433,16 @@ class _ProfileActions extends StatelessWidget {
       ],
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+  }
 }
 
 class _ProfileSkeleton extends StatelessWidget {
+  const _ProfileSkeleton();
+
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
@@ -440,6 +484,11 @@ class _ProfileSkeleton extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+  }
 }
 
 class _ErrorState extends StatelessWidget {
@@ -460,13 +509,23 @@ class _ErrorState extends StatelessWidget {
             const SizedBox(height: CPSpacing.md),
             Text('Failed to load profile', style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.xs),
-            Text(error,
-                style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
+            Text(
+              error,
+              style: CPTextStyles.bodySmall,
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: CPSpacing.lg),
             FilledButton(onPressed: onRetry, child: const Text('Retry')),
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('error', error));
+    properties.add(DiagnosticsProperty('onRetry', onRetry));
   }
 }

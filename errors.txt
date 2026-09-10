@@ -1,0 +1,143 @@
+info • Missing type annotation • lib/src/features/profile/profile_screen.dart:24:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:37:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:42:16 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:43:20 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:53:51 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/profile/profile_screen.dart:65:18 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:66:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:76:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:77:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:79:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:82:38 • prefer_expression_function_bodies
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:85:19 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:87:17 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:87:32 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:90:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:105:23 • always_specify_types
+   info • Use an if-null operator to convert a 'null' to a 'bool' • lib/src/features/profile/profile_screen.dart:106:19 • use_if_null_to_convert_nulls_to_bools
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:155:23 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:177:40 • require_trailing_commas
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:187:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:188:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:189:15 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:191:9 • sort_constructors_first
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:192:69 • require_trailing_commas
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:195:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:197:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:207:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:209:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:212:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:218:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:226:25 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:261:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:262:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:263:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:264:15 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:266:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:274:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:283:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:296:23 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:299:73 • require_trailing_commas
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:309:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:311:9 • sort_constructors_first
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:315:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:323:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:330:21 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:333:58 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:336:20 • require_trailing_commas
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:361:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:364:17 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:373:63 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:383:63 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:393:63 • require_trailing_commas
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:403:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:408:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:411:25 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:415:31 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:425:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:427:22 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:431:33 • prefer_const_constructors
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:446:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:447:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:449:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:452:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:458:21 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:464:75 • require_trailing_commas
+   info • Sort directive sections alphabetically • lib/src/features/settings/settings_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:16:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:17:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:34:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:37:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:83:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:88:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:95:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:102:29 • always_specify_types
+   info • Use an if-null operator to convert a 'null' to a 'bool' • lib/src/features/settings/settings_screen.dart:108:24 • use_if_null_to_convert_nulls_to_bools
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:109:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:117:23 • always_specify_types
+   info • Use an if-null operator to convert a 'null' to a 'bool' • lib/src/features/settings/settings_screen.dart:121:24 • use_if_null_to_convert_nulls_to_bools
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:122:29 • always_specify_types
+   info • Use an if-null operator to convert a 'null' to a 'bool' • lib/src/features/settings/settings_screen.dart:128:24 • use_if_null_to_convert_nulls_to_bools
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:129:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:136:23 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:141:50 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:144:31 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:148:69 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:159:69 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:167:23 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:177:69 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:195:69 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:207:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:208:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:209:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:210:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:214:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:218:17 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:225:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:231:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:238:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:247:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:253:18 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:256:42 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:263:79 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:277:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:281:17 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:287:21 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:289:47 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:292:46 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:295:46 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:308:59 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:309:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:311:34 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:319:59 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:320:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:322:34 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:332:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:336:17 • prefer_const_constructors
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:340:43 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:341:18 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:344:42 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:362:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:366:17 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:376:18 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:379:42 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:385:74 • require_trailing_commas
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:398:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/settings/settings_screen.dart:401:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/settings/settings_screen.dart:404:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:407:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:417:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:418:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:419:14 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:420:28 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/settings/settings_screen.dart:422:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/settings/settings_screen.dart:430:38 • prefer_expression_function_bodies
+   info • Missing a required trailing comma • lib/src/features/settings/settings_screen.dart:443:63 • require_trailing_commas
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:445:27 • prefer_const_constructors
+   info • Required named parameters should be before optional named parameters • lib/src/shared/models/models.dart:139:21 • always_put_required_named_parameters_first
+   info • Required named parameters should be before optional named parameters • lib/src/shared/models/models.dart:160:21 • always_put_required_named_parameters_first
+   info • Missing type annotation • lib/src/shared/models/models.dart:233:51 • always_specify_types
+   info • Missing type annotation • lib/src/shared/models/models.dart:246:47 • always_specify_types
+   info • Missing type annotation • lib/src/shared/models/models.dart:256:52 • always_specify_types
+   info • Dependencies not sorted alphabetically • pubspec.yaml:14:3 • sort_pub_dependencies
+Error: Process completed with exit code 1.

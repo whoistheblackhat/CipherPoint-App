@@ -3,18 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../core/theme/cipherpoint_theme.dart';
-import '../../core/api/api_client.dart';
-import '../../shared/models/models.dart';
 import '../auth/auth_provider.dart';
+import '../../core/api/api_client.dart';
+import '../../core/theme/cipherpoint_theme.dart';
+import '../../shared/models/models.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authState = ref.watch(authStateProvider);
-    final user = authState.value;
+    final AsyncValue<CPUser?> authState = ref.watch(authStateProvider);
+    final CPUser? user = authState.value;
 
     if (user == null) {
       return Scaffold(
@@ -84,28 +84,28 @@ class SettingsScreen extends ConsumerWidget {
               _SwitchTile(
                 title: 'New Challenges',
                 subtitle: 'Get notified when new challenges are published',
-                value: user.notifyNewChallenges == 1,
+                value: (user.notifyNewChallenges ?? 0) == 1,
                 onChanged: (v) =>
                     _updateNotification(ref, user, 'notify_new_challenges', v),
               ),
               _SwitchTile(
                 title: 'Comments',
                 subtitle: 'Notify when someone comments on your challenges',
-                value: user.notifyComments == 1,
+                value: (user.notifyComments ?? 0) == 1,
                 onChanged: (v) =>
                     _updateNotification(ref, user, 'notify_comments', v),
               ),
               _SwitchTile(
                 title: 'Mentions',
                 subtitle: 'Notify when you are mentioned in comments',
-                value: user.notifyMentions == 1,
+                value: (user.notifyMentions ?? 0) == 1,
                 onChanged: (v) =>
                     _updateNotification(ref, user, 'notify_mentions', v),
               ),
               _SwitchTile(
                 title: 'Telegram Notifications',
                 subtitle: 'Receive notifications via Telegram bot',
-                value: user.telegramNotifications == true,
+                value: user.telegramNotifications ?? false,
                 onChanged: (v) =>
                     _updateNotification(ref, user, 'telegram_notifications', v),
               ),
@@ -118,14 +118,14 @@ class SettingsScreen extends ConsumerWidget {
               _SwitchTile(
                 title: 'Public Profile',
                 subtitle: 'Allow others to view your profile',
-                value: user.publicProfile == true,
+                value: user.publicProfile ?? false,
                 onChanged: (v) =>
                     _updatePrivacy(ref, user, 'public_profile', v),
               ),
               _SwitchTile(
                 title: 'Hide Email',
                 subtitle: 'Hide your email from public profile',
-                value: user.hideEmail == true,
+                value: user.hideEmail ?? false,
                 onChanged: (v) => _updatePrivacy(ref, user, 'hide_email', v),
               ),
             ],
@@ -204,10 +204,10 @@ class SettingsScreen extends ConsumerWidget {
   }
 
   void _showChangePasswordDialog(BuildContext context) {
-    final oldController = TextEditingController();
-    final newController = TextEditingController();
-    final confirmController = TextEditingController();
-    final formKey = GlobalKey<FormState>();
+    final TextEditingController oldController = TextEditingController();
+    final TextEditingController newController = TextEditingController();
+    final TextEditingController confirmController = TextEditingController();
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
     showDialog(
       context: context,
@@ -228,14 +228,14 @@ class SettingsScreen extends ConsumerWidget {
                 decoration:
                     const InputDecoration(labelText: 'Current Password'),
                 obscureText: true,
-                validator: (v) => v?.isEmpty ?? true ? 'Required' : null,
+                validator: (String? v) => v?.isEmpty ?? true ? 'Required' : null,
               ),
               const SizedBox(height: CPSpacing.md),
               TextFormField(
                 controller: newController,
                 decoration: const InputDecoration(labelText: 'New Password'),
                 obscureText: true,
-                validator: (v) =>
+                validator: (String? v) =>
                     v != null && v.length >= 8 ? null : 'Min 8 characters',
               ),
               const SizedBox(height: CPSpacing.md),
@@ -244,7 +244,7 @@ class SettingsScreen extends ConsumerWidget {
                 decoration:
                     const InputDecoration(labelText: 'Confirm New Password'),
                 obscureText: true,
-                validator: (v) =>
+                validator: (String? v) =>
                     v == newController.text ? null : 'Passwords must match',
               ),
             ],
@@ -306,7 +306,7 @@ class SettingsScreen extends ConsumerWidget {
 
   Future<void> _updateNotification(
       WidgetRef ref, CPUser user, String field, bool value) async {
-    final client = ref.read(apiClientProvider);
+    final ApiClient client = ref.read(apiClientProvider);
     try {
       await client.updateProfile({field: value ? 1 : 0});
       ref.invalidate(authStateProvider);
@@ -317,7 +317,7 @@ class SettingsScreen extends ConsumerWidget {
 
   Future<void> _updatePrivacy(
       WidgetRef ref, CPUser user, String field, bool value) async {
-    final client = ref.read(apiClientProvider);
+    final ApiClient client = ref.read(apiClientProvider);
     try {
       await client.updateProfile({field: value ? 1 : 0});
       ref.invalidate(authStateProvider);
@@ -326,72 +326,70 @@ class SettingsScreen extends ConsumerWidget {
     }
   }
 
-  void _logout(BuildContext context, WidgetRef ref) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: CPColors.panel,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CPRadius.xl),
-          side: BorderSide(color: CPColors.line),
-        ),
-        title: Text('Logout', style: CPTextStyles.headlineSmall),
-        content: Text('Are you sure you want to logout?',
-            style: CPTextStyles.bodyMedium),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel')),
-          FilledButton(
-            onPressed: () async {
-              Navigator.pop(context);
-              await ref.read(authStateProvider.notifier).logout();
-              if (context.mounted) context.go('/login');
-            },
-            style: FilledButton.styleFrom(backgroundColor: CPColors.danger),
-            child: const Text('Logout'),
+  void _logout(BuildContext context, WidgetRef ref) =>
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: CPColors.panel,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(CPRadius.xl),
+            side: BorderSide(color: CPColors.line),
           ),
-        ],
-      ),
-    );
-  }
+          title: Text('Logout', style: CPTextStyles.headlineSmall),
+          content: Text('Are you sure you want to logout?',
+              style: CPTextStyles.bodyMedium),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancel')),
+            FilledButton(
+              onPressed: () async {
+                Navigator.pop(context);
+                await ref.read(authStateProvider.notifier).logout();
+                if (context.mounted) context.go('/login');
+              },
+              style: FilledButton.styleFrom(backgroundColor: CPColors.danger),
+              child: const Text('Logout'),
+            ),
+          ],
+        ),
+      );
 
-  void _showDeleteAccountDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: CPColors.panel,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(CPRadius.xl),
-          side: BorderSide(color: CPColors.line),
-        ),
-        title: Text(
-          'Delete Account',
-          style: CPTextStyles.headlineSmall.copyWith(color: CPColors.danger),
-        ),
-        content: Text(
-          'This action is irreversible. All your data will be permanently deleted.',
-          style: CPTextStyles.bodyMedium,
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel')),
-          FilledButton(
-            onPressed: () {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                    content: Text('Account deletion not implemented yet')),
-              );
-            },
-            style: FilledButton.styleFrom(backgroundColor: CPColors.danger),
-            child: const Text('Delete Forever'),
+  void _showDeleteAccountDialog(BuildContext context) =>
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: CPColors.panel,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(CPRadius.xl),
+            side: BorderSide(color: CPColors.line),
           ),
-        ],
-      ),
-    );
-  }
+          title: Text(
+            'Delete Account',
+            style: CPTextStyles.headlineSmall.copyWith(color: CPColors.danger),
+          ),
+          content: Text(
+            'This action is irreversible. All your data will be permanently deleted.',
+            style: CPTextStyles.bodyMedium,
+          ),
+          actions: [
+            TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Cancel')),
+            FilledButton(
+              onPressed: () {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                      content: Text('Account deletion not implemented yet')),
+                );
+              },
+              style: FilledButton.styleFrom(backgroundColor: CPColors.danger),
+              child: const Text('Delete Forever'),
+            ),
+          ],
+        ),
+      );
 }
 
 class _SettingsSection extends StatelessWidget {
@@ -410,6 +408,13 @@ class _SettingsSection extends StatelessWidget {
         Column(children: children),
       ],
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('title', title));
+    properties.add(DiagnosticsProperty('children', children));
   }
 }
 
@@ -449,5 +454,14 @@ class _SwitchTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('title', title));
+    properties.add(DiagnosticsProperty('subtitle', subtitle));
+    properties.add(DiagnosticsProperty('value', value));
+    properties.add(DiagnosticsProperty('onChanged', onChanged));
   }
 }
