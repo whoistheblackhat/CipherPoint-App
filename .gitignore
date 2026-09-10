@@ -1,0 +1,50 @@
+# Flutter/Dart/Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.packages
+build/
+flutter_*.png
+*.iml
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.gr.dart
+*.gen.dart
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+*.apk
+*.aab
+*.ipa
+*.app
+*.dSYM/
+
+# Firebase / Google Services
+google-services.json
+GoogleService-Info.plist
+
+# Local secrets
+.env
+*.pem
+*.key
+*.cert
+
+# Coverage
+coverage/
+lcov.info
+
+# Temporary
+*.tmp
+*.temp
