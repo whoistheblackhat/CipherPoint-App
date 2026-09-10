@@ -3,12 +3,8 @@ name: Flutter App CI/CD
 on:
   push:
     branches: [main, develop]
-    paths:
-      - 'CipherPoint-App/**'
   pull_request:
     branches: [main]
-    paths:
-      - 'CipherPoint-App/**'
 
 jobs:
   test:
