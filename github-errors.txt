@@ -1,0 +1,1045 @@
+Analyzing CipherPoint-App...                                    
+
+warning • 'nullable_type_in_async_function' is not a recognized lint rule • analysis_options.yaml:51:7 • undefined_lint
+warning • The rule 'omit_local_variable_types' is incompatible with the rule 'always_specify_types' • analysis_options.yaml:52:7 • incompatible_lint
+warning • 'prefer_inlining_addition' is not a recognized lint rule • analysis_options.yaml:78:7 • undefined_lint
+warning • 'unawaited_futures_only' is not a recognized lint rule • analysis_options.yaml:101:7 • undefined_lint
+warning • The rule 'unnecessary_final' is incompatible with the rule 'prefer_final_locals' • analysis_options.yaml:106:7 • incompatible_lint
+   info • Sort directive sections alphabetically • lib/main.dart:7:1 • directives_ordering
+   info • Local variables should not be marked as 'final' • lib/main.dart:23:5 • unnecessary_final
+   info • Missing type annotation • lib/main.dart:23:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/main.dart:24:5 • unnecessary_final
+   info • Missing type annotation • lib/main.dart:24:5 • always_specify_types
+   info • Missing type annotation • lib/main.dart:33:17 • always_specify_types
+   info • Missing type annotation • lib/main.dart:33:26 • always_specify_types
+   info • Unnecessary use of a block function body • lib/main.dart:33:33 • prefer_expression_function_bodies
+   info • Unnecessary use of a 'double' literal • lib/main.dart:36:83 • prefer_int_literals
+   info • Missing a newline at the end of the file • lib/main.dart:43:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/app/router.dart:5:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/app/router.dart:8:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/app/router.dart:9:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/app/router.dart:12:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/app/router.dart:13:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/app/router.dart:15:1 • directives_ordering
+   info • Missing type annotation • lib/src/app/router.dart:20:1 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:20:44 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/app/router.dart:21:3 • unnecessary_final
+   info • Missing type annotation • lib/src/app/router.dart:21:3 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:25:16 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:25:25 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/app/router.dart:26:7 • unnecessary_final
+   info • Missing type annotation • lib/src/app/router.dart:26:7 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/app/router.dart:27:7 • unnecessary_final
+   info • Missing type annotation • lib/src/app/router.dart:27:7 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:37:13 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:40:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:40:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:44:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:44:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:48:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:48:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:52:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:52:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:56:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:56:28 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/app/router.dart:57:11 • unnecessary_final
+   info • Missing type annotation • lib/src/app/router.dart:57:11 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:63:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:63:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:67:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:67:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:71:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:71:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:75:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:75:28 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/app/router.dart:76:11 • unnecessary_final
+   info • Missing type annotation • lib/src/app/router.dart:76:11 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:82:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:82:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:86:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:86:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:90:19 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:90:28 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:93:20 • always_specify_types
+   info • Missing type annotation • lib/src/app/router.dart:93:29 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/app/router.dart:99:4 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/core/api/api_client.dart:7:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/core/api/api_client.dart:9:1 • directives_ordering
+   info • Sort directive sections alphabetically • lib/src/core/api/api_client.dart:10:1 • directives_ordering
+   info • Missing type annotation • lib/src/core/api/api_client.dart:12:1 • always_specify_types
+   info • Constructor declarations should be before non-constructor declarations • lib/src/core/api/api_client.dart:17:11 • sort_constructors_first
+   info • Missing type annotation • lib/src/core/api/api_client.dart:30:67 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:44:16 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:48:6 • require_trailing_commas
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:56:6 • require_trailing_commas
+   info • Missing type annotation • lib/src/core/api/api_client.dart:59:19 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:59:28 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:61:9 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:61:9 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:67:12 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:72:9 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:72:9 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:78:17 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:78:24 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:85:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:113:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:113:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:125:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:125:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:125:55 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:129:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:140:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:140:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:140:56 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:146:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:151:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:151:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:156:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:156:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:173:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:173:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:173:65 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:179:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:184:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:184:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:192:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:192:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:192:57 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:195:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:203:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:203:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:203:57 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:206:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:212:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:212:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:212:66 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:218:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:218:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:223:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:223:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:233:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:233:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:233:66 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:237:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:242:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:242:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:251:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:251:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:251:75 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:254:6 • require_trailing_commas
+   info • Unnecessary use of a block function body • lib/src/core/api/api_client.dart:259:37 • prefer_expression_function_bodies
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:265:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:265:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:265:68 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:275:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:275:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:284:5 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:284:5 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:284:77 • always_specify_types
+   info • Missing a required trailing comma • lib/src/core/api/api_client.dart:287:6 • require_trailing_commas
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:294:7 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:294:7 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:303:1 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:303:50 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:304:3 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:304:3 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:308:1 • always_specify_types
+   info • Missing type annotation • lib/src/core/api/api_client.dart:308:67 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/api/api_client.dart:309:3 • unnecessary_final
+   info • Missing type annotation • lib/src/core/api/api_client.dart:309:3 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/core/api/api_client.dart:312:4 • eol_at_end_of_file
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:9:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:10:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:11:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:12:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:15:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:16:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:17:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:20:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:21:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:24:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:25:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:28:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:29:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:30:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:31:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:32:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:33:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:34:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:35:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:38:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:39:13 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:120:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:121:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:122:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:123:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:124:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:125:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:126:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:130:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:131:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:132:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:133:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:134:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:135:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:139:10 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:144:10 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/core/theme/cipherpoint_theme.dart:152:3 • unnecessary_final
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:152:3 • always_specify_types
+   info • 'useMaterial3' is deprecated and shouldn't be used. Use a ThemeData constructor (.from, .light, or .dark) instead. These constructors all have a useMaterial3 argument, and they set appropriate default values based on its value. See the useMaterial3 API documentation for full details. This feature was deprecated after v3.13.0-0.2.pre • lib/src/core/theme/cipherpoint_theme.dart:154:5 • deprecated_member_use
+   info • 'background' is deprecated and shouldn't be used. Use surface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/src/core/theme/cipherpoint_theme.dart:164:7 • deprecated_member_use
+   info • 'onBackground' is deprecated and shouldn't be used. Use onSurface instead. This feature was deprecated after v3.18.0-0.1.pre • lib/src/core/theme/cipherpoint_theme.dart:169:7 • deprecated_member_use
+  error • The function 'CardThemeData' isn't defined • lib/src/core/theme/cipherpoint_theme.dart:202:16 • undefined_function
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:228:56 • always_specify_types
+  error • The function 'DialogThemeData' isn't defined • lib/src/core/theme/cipherpoint_theme.dart:305:18 • undefined_function
+   info • Use 'const' with the constructor to improve performance • lib/src/core/theme/cipherpoint_theme.dart:316:23 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/core/theme/cipherpoint_theme.dart:320:14 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/core/theme/cipherpoint_theme.dart:321:23 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/core/theme/cipherpoint_theme.dart:321:50 • prefer_const_constructors
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:332:51 • always_specify_types
+  error • The function 'TabBarThemeData' isn't defined • lib/src/core/theme/cipherpoint_theme.dart:339:18 • undefined_function
+  error • The named parameter 'selectedSide' isn't defined • lib/src/core/theme/cipherpoint_theme.dart:357:7 • undefined_named_parameter
+   info • Use 'const' with the constructor to improve performance • lib/src/core/theme/cipherpoint_theme.dart:360:19 • prefer_const_constructors
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:401:52 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:405:52 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:409:59 • always_specify_types
+  error • The return type 'WidgetStateProperty<Color>' isn't a 'Color?', as required by the closure's context • lib/src/core/theme/cipherpoint_theme.dart:410:59 • return_of_invalid_type_from_closure
+  error • The return type 'WidgetStateProperty<Color>' isn't a 'Color?', as required by the closure's context • lib/src/core/theme/cipherpoint_theme.dart:411:16 • return_of_invalid_type_from_closure
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:415:51 • always_specify_types
+   info • Missing type annotation • lib/src/core/theme/cipherpoint_theme.dart:424:51 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/core/theme/cipherpoint_theme.dart:439:2 • eol_at_end_of_file
+   info • The import of 'package:riverpod/riverpod.dart' is unnecessary because all of the used elements are also provided by the import of 'package:riverpod_annotation/riverpod_annotation.dart' • lib/src/features/auth/auth_provider.dart:3:8 • unnecessary_import
+  error • Target of URI doesn't exist: '../api/api_client.dart' • lib/src/features/auth/auth_provider.dart:5:8 • uri_does_not_exist
+   info • Sort directive sections alphabetically • lib/src/features/auth/auth_provider.dart:6:1 • directives_ordering
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:14:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:14:5 • always_specify_types
+  error • Undefined name 'apiClientProvider' • lib/src/features/auth/auth_provider.dart:14:30 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:16:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:16:7 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:28:19 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:29:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:29:5 • always_specify_types
+  error • Undefined name 'apiClientProvider' • lib/src/features/auth/auth_provider.dart:29:29 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:31:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:31:7 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:36:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:36:7 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:38:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:41:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:53:19 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:54:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:54:5 • always_specify_types
+  error • Undefined name 'apiClientProvider' • lib/src/features/auth/auth_provider.dart:54:29 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:56:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:56:7 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:63:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:63:7 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:65:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:68:15 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:74:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:74:5 • always_specify_types
+  error • Undefined name 'apiClientProvider' • lib/src/features/auth/auth_provider.dart:74:29 • undefined_identifier
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:76:19 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:80:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:80:5 • always_specify_types
+  error • Undefined name 'apiClientProvider' • lib/src/features/auth/auth_provider.dart:80:29 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:82:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:82:7 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:83:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:85:21 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:92:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:92:3 • always_specify_types
+  error • Undefined name 'apiClientProvider' • lib/src/features/auth/auth_provider.dart:92:28 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:98:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:98:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/auth_provider.dart:99:14 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/auth_provider.dart:99:14 • always_specify_types
+  error • The type 'AsyncValue<void>' used in the 'for' loop must implement 'Stream' • lib/src/features/auth/auth_provider.dart:99:25 • for_in_of_invalid_type
+   info • Missing a newline at the end of the file • lib/src/features/auth/auth_provider.dart:102:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/auth/login_screen.dart:7:1 • directives_ordering
+  error • Target of URI doesn't exist: '../../auth/auth_provider.dart' • lib/src/features/auth/login_screen.dart:7:8 • uri_does_not_exist
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:17:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:18:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:19:3 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/auth/login_screen.dart:31:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:41:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:66:33 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:74:39 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:90:39 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:120:31 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/auth/login_screen.dart:132:32 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:140:31 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/login_screen.dart:161:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:161:5 • always_specify_types
+  error • Undefined name 'authStateProvider' • lib/src/features/auth/login_screen.dart:161:36 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/login_screen.dart:171:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/login_screen.dart:171:7 • always_specify_types
+  error • Undefined name 'authStateProvider' • lib/src/features/auth/login_screen.dart:171:30 • undefined_identifier
+   info • Missing a newline at the end of the file • lib/src/features/auth/login_screen.dart:186:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/auth/signup_screen.dart:7:1 • directives_ordering
+  error • Target of URI doesn't exist: '../../auth/auth_provider.dart' • lib/src/features/auth/signup_screen.dart:7:8 • uri_does_not_exist
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:17:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:18:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:19:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:20:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:21:3 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/auth/signup_screen.dart:37:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:47:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:72:33 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:81:39 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:97:39 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:119:39 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:139:39 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:145:37 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:148:43 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:158:47 • always_specify_types
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:197:31 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/signup_screen.dart:224:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:224:5 • always_specify_types
+  error • Undefined name 'authStateProvider' • lib/src/features/auth/signup_screen.dart:224:36 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/auth/signup_screen.dart:235:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/auth/signup_screen.dart:235:7 • always_specify_types
+  error • Undefined name 'authStateProvider' • lib/src/features/auth/signup_screen.dart:235:30 • undefined_identifier
+   info • Missing a newline at the end of the file • lib/src/features/auth/signup_screen.dart:244:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/challenges/challenge_detail_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:10:74 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:10:79 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:12:3 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:17:13 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:19:9 • sort_constructors_first
+   info • Required named parameters should be before optional named parameters • lib/src/features/challenges/challenge_detail_screen.dart:19:57 • always_put_required_named_parameters_first
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:23:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:23:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:27:16 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:28:20 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:35:29 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/challenges/challenge_detail_screen.dart:52:18 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:53:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:60:21 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:62:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:65:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:72:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:91:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:105:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:122:26 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:133:21 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:135:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:138:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:140:17 • always_specify_types
+   info • Use an if-null operator to convert a 'null' to a 'bool' • lib/src/features/challenges/challenge_detail_screen.dart:160:13 • use_if_null_to_convert_nulls_to_bools
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:172:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:173:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:174:15 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:176:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:179:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:189:19 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:200:21 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:202:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:205:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:208:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:230:21 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:232:9 • sort_constructors_first
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:236:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:236:5 • always_specify_types
+warning • The value of the local variable 'client' isn't used • lib/src/features/challenges/challenge_detail_screen.dart:236:11 • unused_local_variable
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:240:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:243:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:259:41 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:273:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:273:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:275:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:275:7 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:276:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:276:7 • always_specify_types
+   info • Don't use 'BuildContext's across async gaps • lib/src/features/challenges/challenge_detail_screen.dart:278:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/src/features/challenges/challenge_detail_screen.dart:283:30 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/src/features/challenges/challenge_detail_screen.dart:288:28 • use_build_context_synchronously
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:296:13 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:297:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:298:13 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:299:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:301:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:309:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:315:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:317:25 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:324:31 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:353:21 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:355:9 • sort_constructors_first
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:365:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:387:21 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:389:9 • sort_constructors_first
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:393:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:393:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:394:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:394:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:395:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:395:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:399:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:409:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:421:33 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:430:27 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:430:27 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_detail_screen.dart:434:27 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:434:27 • always_specify_types
+   info • Don't use 'BuildContext's across async gaps • lib/src/features/challenges/challenge_detail_screen.dart:436:50 • use_build_context_synchronously
+   info • Don't use 'BuildContext's across async gaps • lib/src/features/challenges/challenge_detail_screen.dart:445:50 • use_build_context_synchronously
+warning • The left operand can't be null, so the right operand is never executed • lib/src/features/challenges/challenge_detail_screen.dart:447:63 • dead_null_aware_expression
+   info • Don't use 'BuildContext's across async gaps • lib/src/features/challenges/challenge_detail_screen.dart:453:48 • use_build_context_synchronously
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:473:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/challenges/challenge_detail_screen.dart:474:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:478:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:487:27 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:504:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_detail_screen.dart:505:13 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_detail_screen.dart:507:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_detail_screen.dart:510:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_detail_screen.dart:518:23 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/challenges/challenge_detail_screen.dart:535:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/challenges/challenge_list_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:10:92 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:10:97 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:12:3 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/challenges/challenge_list_screen.dart:19:21 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:19:22 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:32:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:34:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:61:11 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:76:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:76:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:76:24 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:77:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:77:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:77:26 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:79:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:79:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:79:58 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/challenges/challenge_list_screen.dart:85:7 • require_trailing_commas
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:90:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:98:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:128:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:128:38 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:129:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:129:17 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:130:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:130:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:134:32 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:155:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:155:38 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:156:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:156:17 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:157:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:157:17 • always_specify_types
+   info • Unnecessary type annotation on a local variable • lib/src/features/challenges/challenge_list_screen.dart:158:17 • omit_local_variable_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:165:32 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:185:24 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:208:35 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:208:44 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:215:23 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:215:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:228:25 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:247:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:250:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:250:24 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:263:21 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:264:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_list_screen.dart:266:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_list_screen.dart:269:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:278:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:279:56 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:300:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:302:33 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:339:33 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/challenges/challenge_list_screen.dart:340:25 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:344:93 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/challenges/challenge_list_screen.dart:345:27 • prefer_const_constructors
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_list_screen.dart:368:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/challenges/challenge_list_screen.dart:369:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:377:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:383:29 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:401:17 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:402:17 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:403:36 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_list_screen.dart:405:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_list_screen.dart:412:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:422:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:430:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:430:73 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:431:15 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:431:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:435:30 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:444:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:444:62 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/challenges/challenge_list_screen.dart:445:15 • unnecessary_final
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:445:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:449:30 • always_specify_types
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:455:23 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:479:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:480:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/challenges/challenge_list_screen.dart:481:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/challenges/challenge_list_screen.dart:484:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/challenges/challenge_list_screen.dart:492:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/challenges/challenge_list_screen.dart:498:21 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/challenges/challenge_list_screen.dart:511:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/community/community_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:10:72 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/community/community_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/community/community_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:12:3 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/community/community_screen.dart:13:21 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:13:22 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:24:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/community/community_screen.dart:34:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:34:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:39:18 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/community/community_screen.dart:42:24 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:48:16 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:67:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:67:38 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/community/community_screen.dart:68:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:68:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:82:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:98:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/community/community_screen.dart:104:21 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/community/community_screen.dart:105:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/community/community_screen.dart:107:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/community/community_screen.dart:110:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:120:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:122:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:165:27 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/community/community_screen.dart:166:19 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:170:87 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/community/community_screen.dart:171:21 • prefer_const_constructors
+   info • Unnecessary use of a block function body • lib/src/features/community/community_screen.dart:193:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/community/community_screen.dart:194:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:203:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:223:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:224:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:225:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:226:3 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/community/community_screen.dart:240:38 • prefer_expression_function_bodies
+   info • Use 'const' with the constructor to improve performance • lib/src/features/community/community_screen.dart:245:15 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:255:25 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:259:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:265:64 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:265:70 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:266:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:272:26 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:272:58 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:272:64 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:273:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:279:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:286:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:293:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:300:16 • always_specify_types
+   info • To-do comment doesn't follow the Flutter style • lib/src/features/community/community_screen.dart:313:5 • flutter_style_todos
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/community/community_screen.dart:321:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/community/community_screen.dart:322:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/community/community_screen.dart:323:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/community/community_screen.dart:326:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/community/community_screen.dart:334:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:340:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/community/community_screen.dart:346:36 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/community/community_screen.dart:355:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/dashboard/dashboard_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:10:69 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:12:10 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:12:22 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:12:35 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:12:62 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:17:10 • always_specify_types
+  error • The method 'map' isn't defined for the type 'Object' • lib/src/features/dashboard/dashboard_screen.dart:18:30 • undefined_method
+   info • Closure should be a tearoff • lib/src/features/dashboard/dashboard_screen.dart:18:34 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:18:35 • always_specify_types
+  error • The operator '[]' isn't defined for the type 'Object' • lib/src/features/dashboard/dashboard_screen.dart:19:32 • undefined_operator
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:19:45 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/dashboard/dashboard_screen.dart:19:55 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:19:56 • always_specify_types
+  error • The method 'map' isn't defined for the type 'Object' • lib/src/features/dashboard/dashboard_screen.dart:20:20 • undefined_method
+   info • Closure should be a tearoff • lib/src/features/dashboard/dashboard_screen.dart:20:24 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:20:25 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:29:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:29:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:30:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:30:5 • always_specify_types
+  error • Undefined name 'authStateProvider' • lib/src/features/dashboard/dashboard_screen.dart:30:33 • undefined_identifier
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:31:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:31:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:35:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:39:22 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/dashboard/dashboard_screen.dart:44:24 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:45:23 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:60:17 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:62:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:65:53 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:75:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:91:16 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:129:27 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:130:34 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:131:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:133:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:140:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:145:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:160:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:160:38 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:161:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:161:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:169:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:179:64 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:180:23 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:180:23 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/dashboard/dashboard_screen.dart:181:23 • unnecessary_final
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:181:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:203:42 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/dashboard/dashboard_screen.dart:206:22 • require_trailing_commas
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:219:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:222:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:225:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:228:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:237:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:241:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:248:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:254:21 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:266:21 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:267:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:269:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:272:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:285:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:305:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:307:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:344:31 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/dashboard/dashboard_screen.dart:345:23 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:352:91 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/dashboard/dashboard_screen.dart:353:25 • prefer_const_constructors
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:373:13 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:374:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:375:13 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:376:13 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:377:14 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:379:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:388:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:398:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:413:25 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:415:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:417:43 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:441:24 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:442:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:444:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:447:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:454:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:471:27 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:488:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:493:19 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/dashboard/dashboard_screen.dart:494:11 • prefer_const_constructors
+  error • Undefined name 'Shimmer' • lib/src/features/dashboard/dashboard_screen.dart:509:24 • undefined_identifier
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/dashboard/dashboard_screen.dart:524:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/dashboard/dashboard_screen.dart:526:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/dashboard/dashboard_screen.dart:529:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/dashboard/dashboard_screen.dart:534:21 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/dashboard/dashboard_screen.dart:550:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/intel/intel_article_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:10:74 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:10:79 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_article_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_article_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:12:3 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:17:13 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_article_screen.dart:19:9 • sort_constructors_first
+   info • Required named parameters should be before optional named parameters • lib/src/features/intel/intel_article_screen.dart:19:54 • always_put_required_named_parameters_first
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_article_screen.dart:23:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:23:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:27:16 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:28:20 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:35:29 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/intel/intel_article_screen.dart:49:18 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:50:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:57:24 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_article_screen.dart:59:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_article_screen.dart:62:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:70:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:81:33 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:98:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:115:26 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:126:24 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_article_screen.dart:128:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_article_screen.dart:131:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:133:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:143:23 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_article_screen.dart:159:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:159:7 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:168:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_article_screen.dart:170:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_article_screen.dart:173:38 • prefer_expression_function_bodies
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:191:24 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_article_screen.dart:193:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_article_screen.dart:196:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:199:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:200:41 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_article_screen.dart:224:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/intel/intel_article_screen.dart:225:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:229:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:238:27 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:255:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_article_screen.dart:256:13 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_article_screen.dart:258:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_article_screen.dart:261:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/intel/intel_article_screen.dart:269:23 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/intel/intel_article_screen.dart:286:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/intel/intel_vault_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:10:82 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:10:87 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:12:3 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/intel/intel_vault_screen.dart:13:21 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:13:22 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:25:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:35:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:35:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:35:24 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:36:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:36:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:41:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:49:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:58:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:58:38 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:59:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:59:17 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:60:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:60:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:64:32 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:83:24 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:97:35 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:97:44 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:98:23 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:98:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:111:25 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:132:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:141:21 • always_specify_types
+  error • Undefined name 'categories' • lib/src/features/intel/intel_vault_screen.dart:147:25 • undefined_identifier
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:147:41 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:148:17 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:148:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:152:32 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_vault_screen.dart:168:24 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_vault_screen.dart:169:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_vault_screen.dart:171:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_vault_screen.dart:174:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:184:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:186:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:214:47 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:225:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:226:58 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/intel/intel_vault_screen.dart:251:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:251:7 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_vault_screen.dart:261:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/intel/intel_vault_screen.dart:262:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:271:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:279:27 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/intel/intel_vault_screen.dart:280:64 • prefer_const_constructors
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_vault_screen.dart:294:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_vault_screen.dart:295:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/intel/intel_vault_screen.dart:296:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/intel/intel_vault_screen.dart:299:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/intel/intel_vault_screen.dart:307:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:313:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/intel/intel_vault_screen.dart:319:36 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/intel/intel_vault_screen.dart:328:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/leaderboard/leaderboard_screen.dart:6:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:9:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:9:68 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:10:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:10:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:12:3 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:12:37 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/leaderboard/leaderboard_screen.dart:12:47 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:12:48 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:13:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:13:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:24:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:24:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:29:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:37:16 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:38:20 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:48:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:48:40 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:49:19 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:49:19 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/leaderboard/leaderboard_screen.dart:50:19 • unnecessary_final
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:50:19 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/leaderboard/leaderboard_screen.dart:61:18 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:62:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:72:28 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/leaderboard/leaderboard_screen.dart:74:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/leaderboard/leaderboard_screen.dart:77:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:83:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:92:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:94:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:127:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:135:68 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:139:44 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/leaderboard/leaderboard_screen.dart:142:23 • prefer_const_constructors
+   info • Missing a required trailing comma • lib/src/features/leaderboard/leaderboard_screen.dart:143:16 • require_trailing_commas
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:153:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:154:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:155:15 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/leaderboard/leaderboard_screen.dart:157:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/leaderboard/leaderboard_screen.dart:160:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:170:19 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:181:13 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:182:28 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:183:14 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/leaderboard/leaderboard_screen.dart:185:9 • sort_constructors_first
+   info • Statements in an if should be enclosed in a block • lib/src/features/leaderboard/leaderboard_screen.dart:194:20 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/src/features/leaderboard/leaderboard_screen.dart:195:25 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/src/features/leaderboard/leaderboard_screen.dart:196:25 • curly_braces_in_flow_control_structures
+   info • Statements in an if should be enclosed in a block • lib/src/features/leaderboard/leaderboard_screen.dart:197:10 • curly_braces_in_flow_control_structures
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:220:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:242:27 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/leaderboard/leaderboard_screen.dart:243:19 • prefer_const_constructors
+   info • Unnecessary use of a block function body • lib/src/features/leaderboard/leaderboard_screen.dart:256:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/leaderboard/leaderboard_screen.dart:257:12 • undefined_identifier
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:277:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/leaderboard/leaderboard_screen.dart:278:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/leaderboard/leaderboard_screen.dart:280:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/leaderboard/leaderboard_screen.dart:283:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/leaderboard/leaderboard_screen.dart:289:21 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/leaderboard/leaderboard_screen.dart:302:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/notifications/notifications_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:10:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:10:69 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:11:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:11:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:12:3 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/notifications/notifications_screen.dart:13:21 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:13:22 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:21:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:21:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:26:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:28:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:28:32 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:29:15 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:29:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:30:55 • always_specify_types
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:30:62 • unchecked_use_of_nullable_value
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:42:16 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/notifications/notifications_screen.dart:44:20 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:53:27 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:53:36 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:54:15 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:54:15 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:67:17 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:81:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:81:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:82:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:82:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:82:68 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:83:10 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:83:10 • always_specify_types
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:84:12 • unchecked_use_of_nullable_value
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:94:10 • unchecked_use_of_nullable_value
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:95:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:95:7 • always_specify_types
+   info • Unnecessary duplication of receiver • lib/src/features/notifications/notifications_screen.dart:96:7 • cascade_invocations
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/notifications/notifications_screen.dart:111:24 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/notifications/notifications_screen.dart:112:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/notifications/notifications_screen.dart:114:9 • sort_constructors_first
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:118:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:118:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:119:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:119:5 • always_specify_types
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:123:14 • unchecked_use_of_nullable_value
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:128:18 • unchecked_use_of_nullable_value
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:138:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:151:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:153:33 • always_specify_types
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:158:43 • unchecked_use_of_nullable_value
+  error • A nullable expression can't be used as a condition • lib/src/features/notifications/notifications_screen.dart:162:30 • unchecked_use_of_nullable_value
+   info • Use 'const' with the constructor to improve performance • lib/src/features/notifications/notifications_screen.dart:166:41 • prefer_const_constructors
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:218:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:218:7 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:219:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:219:7 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/notifications/notifications_screen.dart:220:7 • unnecessary_final
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:220:7 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/notifications/notifications_screen.dart:233:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/notifications/notifications_screen.dart:234:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:242:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:248:29 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/notifications/notifications_screen.dart:266:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/notifications/notifications_screen.dart:267:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/notifications/notifications_screen.dart:268:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/notifications/notifications_screen.dart:271:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/notifications/notifications_screen.dart:279:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:285:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/notifications/notifications_screen.dart:291:36 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/notifications/notifications_screen.dart:300:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/profile/profile_screen.dart:7:1 • directives_ordering
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:11:1 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:11:75 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:11:80 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/profile/profile_screen.dart:12:3 • unnecessary_final
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:12:3 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/profile/profile_screen.dart:21:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:21:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/profile/profile_screen.dart:22:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:22:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/profile/profile_screen.dart:30:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:30:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:35:16 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:36:20 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:46:51 • always_specify_types
+   info • Closure should be a tearoff • lib/src/features/profile/profile_screen.dart:58:18 • unnecessary_lambdas
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:59:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:66:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:67:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:69:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:72:38 • prefer_expression_function_bodies
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:75:19 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:77:17 • prefer_const_constructors
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:77:32 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:80:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:94:23 • always_specify_types
+   info • Use an if-null operator to convert a 'null' to a 'bool' • lib/src/features/profile/profile_screen.dart:95:19 • use_if_null_to_convert_nulls_to_bools
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:125:23 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:142:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:143:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:144:15 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:146:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:149:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:151:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:161:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:163:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:166:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:172:21 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:180:25 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:195:18 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:196:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:197:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:198:15 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:200:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:203:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:212:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:225:23 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:237:30 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:239:9 • sort_constructors_first
+   info • Local variables should not be marked as 'final' • lib/src/features/profile/profile_screen.dart:243:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:243:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:251:17 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:257:33 • always_specify_types
+   info • Missing a required trailing comma • lib/src/features/profile/profile_screen.dart:262:12 • require_trailing_commas
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:281:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:284:17 • always_specify_types
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:320:38 • prefer_expression_function_bodies
+  error • Undefined name 'Shimmer' • lib/src/features/profile/profile_screen.dart:321:12 • undefined_identifier
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:325:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:328:25 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:329:64 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:335:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:335:47 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/profile/profile_screen.dart:335:122 • prefer_const_constructors
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:347:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/profile/profile_screen.dart:348:22 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/profile/profile_screen.dart:350:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/profile/profile_screen.dart:353:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/profile/profile_screen.dart:359:21 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/features/profile/profile_screen.dart:372:2 • eol_at_end_of_file
+   info • Sort directive sections alphabetically • lib/src/features/settings/settings_screen.dart:7:1 • directives_ordering
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:16:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:16:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:17:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:17:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:29:19 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:32:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:68:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:73:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:79:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:85:29 • always_specify_types
+   info • The type of the right operand ('int') isn't a subtype or a supertype of the left operand ('bool?') • lib/src/features/settings/settings_screen.dart:90:51 • unrelated_type_equality_checks
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:91:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:98:23 • always_specify_types
+   info • The type of the right operand ('int') isn't a subtype or a supertype of the left operand ('bool?') • lib/src/features/settings/settings_screen.dart:102:43 • unrelated_type_equality_checks
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:103:29 • always_specify_types
+   info • The type of the right operand ('int') isn't a subtype or a supertype of the left operand ('bool?') • lib/src/features/settings/settings_screen.dart:108:39 • unrelated_type_equality_checks
+1040 issues found. (ran in 12.2s)
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:109:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:116:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:123:31 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:143:23 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:169:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:169:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:170:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:170:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:171:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:171:5 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:172:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:172:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:176:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:178:95 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:184:23 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:189:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:196:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:203:29 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:208:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:229:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:231:95 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:236:21 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:254:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:254:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:256:34 • always_specify_types
+   info • Local variables should not be marked as 'final' • lib/src/features/settings/settings_screen.dart:264:5 • unnecessary_final
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:264:5 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:266:34 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:276:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:278:95 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:281:18 • always_specify_types
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:300:17 • always_specify_types
+   info • Use 'const' with the constructor to improve performance • lib/src/features/settings/settings_screen.dart:302:95 • prefer_const_constructors
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:305:18 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:324:16 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/settings/settings_screen.dart:327:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/settings/settings_screen.dart:330:38 • prefer_expression_function_bodies
+   info • Missing type annotation • lib/src/features/settings/settings_screen.dart:333:17 • always_specify_types
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:343:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:344:16 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:345:14 • diagnostic_describe_all_properties
+   info • The public property isn't described by either 'debugFillProperties' or 'debugDescribeChildren' • lib/src/features/settings/settings_screen.dart:346:28 • diagnostic_describe_all_properties
+   info • Constructor declarations should be before non-constructor declarations • lib/src/features/settings/settings_screen.dart:348:9 • sort_constructors_first
+   info • Unnecessary use of a block function body • lib/src/features/settings/settings_screen.dart:356:38 • prefer_expression_function_bodies
+   info • Missing a newline at the end of the file • lib/src/features/settings/settings_screen.dart:375:2 • eol_at_end_of_file
+   info • Required named parameters should be before optional named parameters • lib/src/shared/models/models.dart:134:21 • always_put_required_named_parameters_first
+   info • Required named parameters should be before optional named parameters • lib/src/shared/models/models.dart:154:21 • always_put_required_named_parameters_first
+   info • Missing type annotation • lib/src/shared/models/models.dart:222:51 • always_specify_types
+   info • Missing type annotation • lib/src/shared/models/models.dart:235:47 • always_specify_types
+   info • Missing type annotation • lib/src/shared/models/models.dart:245:52 • always_specify_types
+   info • Missing a newline at the end of the file • lib/src/shared/models/models.dart:285:2 • eol_at_end_of_file
+   info • Dependencies not sorted alphabetically • pubspec.yaml:18:3 • sort_pub_dependencies
+   info • Dependencies not sorted alphabetically • pubspec.yaml:55:3 • sort_pub_dependencies
+warning • The asset directory 'assets/images/' doesn't exist • pubspec.yaml:66:7 • asset_directory_does_not_exist
+warning • The asset directory 'assets/icons/' doesn't exist • pubspec.yaml:67:7 • asset_directory_does_not_exist
+   info • Sort directive sections alphabetically • test/widget_test.dart:11:1 • directives_ordering
+warning • Unused import: 'package:cipherpoint/main.dart' • test/widget_test.dart:11:8 • unused_import
+  error • The name 'MyApp' isn't a class • test/widget_test.dart:16:35 • creation_with_non_type
+
+Error: Process completed with exit code 1.

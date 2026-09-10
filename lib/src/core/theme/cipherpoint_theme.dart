@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CPColors {
   // Background
   static const bg950 = Color(0xFF050A13);
-  static const bg900 = Color(0xFF0B1120);  // Main background
+  static const bg900 = Color(0xFF0B1120); // Main background
   static const bg800 = Color(0xFF111827);
   static const bg700 = Color(0xFF1A2332);
 
@@ -17,7 +17,7 @@ class CPColors {
   static const card = Color(0xFF0F172A);
 
   // Borders
-  static const line = Color(0x1F94A3B8);     // rgba(148, 163, 184, 0.12)
+  static const line = Color(0x1F94A3B8); // rgba(148, 163, 184, 0.12)
   static const lineStrong = Color(0x3394A3B8); // rgba(148, 163, 184, 0.20)
 
   // Text
@@ -44,76 +44,125 @@ class CPColors {
 
 class CPTextStyles {
   static TextStyle get displayLarge => GoogleFonts.inter(
-    fontSize: 44, fontWeight: FontWeight.w800, letterSpacing: -0.04,
-    height: 1.12, color: CPColors.text,
-  );
+        fontSize: 44,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -0.04,
+        height: 1.12,
+        color: CPColors.text,
+      );
   static TextStyle get displayMedium => GoogleFonts.inter(
-    fontSize: 36, fontWeight: FontWeight.w800, letterSpacing: -0.04,
-    height: 1.12, color: CPColors.text,
-  );
+        fontSize: 36,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -0.04,
+        height: 1.12,
+        color: CPColors.text,
+      );
   static TextStyle get displaySmall => GoogleFonts.inter(
-    fontSize: 28, fontWeight: FontWeight.w800, letterSpacing: -0.04,
-    height: 1.12, color: CPColors.text,
-  );
+        fontSize: 28,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -0.04,
+        height: 1.12,
+        color: CPColors.text,
+      );
 
   static TextStyle get headlineLarge => GoogleFonts.inter(
-    fontSize: 24, fontWeight: FontWeight.w700, letterSpacing: -0.02,
-    height: 1.25, color: CPColors.text,
-  );
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.02,
+        height: 1.25,
+        color: CPColors.text,
+      );
   static TextStyle get headlineMedium => GoogleFonts.inter(
-    fontSize: 20, fontWeight: FontWeight.w700, letterSpacing: -0.02,
-    height: 1.3, color: CPColors.text,
-  );
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.02,
+        height: 1.3,
+        color: CPColors.text,
+      );
   static TextStyle get headlineSmall => GoogleFonts.inter(
-    fontSize: 18, fontWeight: FontWeight.w700, letterSpacing: -0.01,
-    height: 1.35, color: CPColors.text,
-  );
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.01,
+        height: 1.35,
+        color: CPColors.text,
+      );
 
   static TextStyle get titleLarge => GoogleFonts.inter(
-    fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: 0,
-    height: 1.4, color: CPColors.text,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0,
+        height: 1.4,
+        color: CPColors.text,
+      );
   static TextStyle get titleMedium => GoogleFonts.inter(
-    fontSize: 14, fontWeight: FontWeight.w600, letterSpacing: 0,
-    height: 1.4, color: CPColors.text,
-  );
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0,
+        height: 1.4,
+        color: CPColors.text,
+      );
   static TextStyle get titleSmall => GoogleFonts.inter(
-    fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: 0.02,
-    height: 1.4, color: CPColors.text,
-  );
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.02,
+        height: 1.4,
+        color: CPColors.text,
+      );
 
   static TextStyle get bodyLarge => GoogleFonts.inter(
-    fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0,
-    height: 1.6, color: CPColors.text,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0,
+        height: 1.6,
+        color: CPColors.text,
+      );
   static TextStyle get bodyMedium => GoogleFonts.inter(
-    fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0,
-    height: 1.6, color: CPColors.text,
-  );
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0,
+        height: 1.6,
+        color: CPColors.text,
+      );
   static TextStyle get bodySmall => GoogleFonts.inter(
-    fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0,
-    height: 1.5, color: CPColors.muted,
-  );
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0,
+        height: 1.5,
+        color: CPColors.muted,
+      );
 
   static TextStyle get labelLarge => GoogleFonts.inter(
-    fontSize: 14, fontWeight: FontWeight.w600, letterSpacing: 0.02,
-    height: 1.4, color: CPColors.text,
-  );
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.02,
+        height: 1.4,
+        color: CPColors.text,
+      );
   static TextStyle get labelMedium => GoogleFonts.inter(
-    fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: 0.05,
-    height: 1.4, color: CPColors.text,
-  );
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.05,
+        height: 1.4,
+        color: CPColors.text,
+      );
   static TextStyle get labelSmall => GoogleFonts.inter(
-    fontSize: 11, fontWeight: FontWeight.w600, letterSpacing: 0.08,
-    height: 1.4, color: CPColors.muted,
-  );
+        fontSize: 11,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.08,
+        height: 1.4,
+        color: CPColors.muted,
+      );
 
   static TextStyle get eyebrow => GoogleFonts.inter(
-    fontSize: 11, fontWeight: FontWeight.w600, letterSpacing: 0.09,
-    height: 1.4, color: CPColors.teal,
-  );
+        fontSize: 11,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.09,
+        height: 1.4,
+        color: CPColors.teal,
+      );
 
-  static TextStyle muted(TextStyle base) => base.copyWith(color: CPColors.muted);
+  static TextStyle muted(TextStyle base) =>
+      base.copyWith(color: CPColors.muted);
 }
 
 class CPSpacing {
@@ -149,9 +198,8 @@ class CPShadows {
 }
 
 ThemeData createCipherPointTheme() {
-  final base = ThemeData.dark();
+  final base = ThemeData.dark(useMaterial3: true);
   return base.copyWith(
-    useMaterial3: true,
     scaffoldBackgroundColor: CPColors.bg900,
     canvasColor: CPColors.bg900,
     cardColor: CPColors.card,
@@ -161,33 +209,33 @@ ThemeData createCipherPointTheme() {
       primary: CPColors.primary,
       secondary: CPColors.teal,
       surface: CPColors.panel,
-      background: CPColors.bg900,
       error: CPColors.danger,
       onPrimary: Color(0xFF07111D),
       onSecondary: Color(0xFF07111D),
       onSurface: CPColors.text,
-      onBackground: CPColors.text,
       onError: CPColors.text,
       outline: CPColors.line,
       outlineVariant: CPColors.lineStrong,
     ),
-    textTheme: GoogleFonts.interTextTheme(base.textTheme).copyWith(
-      displayLarge: CPTextStyles.displayLarge,
-      displayMedium: CPTextStyles.displayMedium,
-      displaySmall: CPTextStyles.displaySmall,
-      headlineLarge: CPTextStyles.headlineLarge,
-      headlineMedium: CPTextStyles.headlineMedium,
-      headlineSmall: CPTextStyles.headlineSmall,
-      titleLarge: CPTextStyles.titleLarge,
-      titleMedium: CPTextStyles.titleMedium,
-      titleSmall: CPTextStyles.titleSmall,
-      bodyLarge: CPTextStyles.bodyLarge,
-      bodyMedium: CPTextStyles.bodyMedium,
-      bodySmall: CPTextStyles.bodySmall,
-      labelLarge: CPTextStyles.labelLarge,
-      labelMedium: CPTextStyles.labelMedium,
-      labelSmall: CPTextStyles.labelSmall,
-    ).apply(bodyColor: CPColors.text, displayColor: CPColors.text),
+    textTheme: GoogleFonts.interTextTheme(base.textTheme)
+        .copyWith(
+          displayLarge: CPTextStyles.displayLarge,
+          displayMedium: CPTextStyles.displayMedium,
+          displaySmall: CPTextStyles.displaySmall,
+          headlineLarge: CPTextStyles.headlineLarge,
+          headlineMedium: CPTextStyles.headlineMedium,
+          headlineSmall: CPTextStyles.headlineSmall,
+          titleLarge: CPTextStyles.titleLarge,
+          titleMedium: CPTextStyles.titleMedium,
+          titleSmall: CPTextStyles.titleSmall,
+          bodyLarge: CPTextStyles.bodyLarge,
+          bodyMedium: CPTextStyles.bodyMedium,
+          bodySmall: CPTextStyles.bodySmall,
+          labelLarge: CPTextStyles.labelLarge,
+          labelMedium: CPTextStyles.labelMedium,
+          labelSmall: CPTextStyles.labelSmall,
+        )
+        .apply(bodyColor: CPColors.text, displayColor: CPColors.text),
     appBarTheme: AppBarTheme(
       backgroundColor: CPColors.bg900.withOpacity(0.95),
       surfaceTintColor: Colors.transparent,
@@ -199,7 +247,7 @@ ThemeData createCipherPointTheme() {
       iconTheme: const IconThemeData(color: CPColors.text, size: 24),
       actionsIconTheme: const IconThemeData(color: CPColors.text, size: 24),
     ),
-    cardTheme: CardThemeData(
+    cardTheme: CardTheme(
       color: CPColors.card,
       surfaceTintColor: Colors.transparent,
       elevation: 0,
@@ -298,11 +346,13 @@ ThemeData createCipherPointTheme() {
         borderSide: const BorderSide(color: CPColors.line),
       ),
       labelStyle: CPTextStyles.bodyMedium.copyWith(color: CPColors.muted),
-      hintStyle: CPTextStyles.bodyMedium.copyWith(color: CPColors.muted.withOpacity(0.5)),
-      floatingLabelStyle: CPTextStyles.labelSmall.copyWith(color: CPColors.primary),
+      hintStyle: CPTextStyles.bodyMedium
+          .copyWith(color: CPColors.muted.withOpacity(0.5)),
+      floatingLabelStyle:
+          CPTextStyles.labelSmall.copyWith(color: CPColors.primary),
       errorStyle: CPTextStyles.bodySmall.copyWith(color: CPColors.danger),
     ),
-    dialogTheme: DialogThemeData(
+    dialogTheme: DialogTheme(
       backgroundColor: CPColors.panel,
       surfaceTintColor: Colors.transparent,
       elevation: 0,
@@ -336,7 +386,7 @@ ThemeData createCipherPointTheme() {
         return const IconThemeData(color: CPColors.muted, size: 24);
       }),
     ),
-    tabBarTheme: TabBarThemeData(
+    tabBarTheme: TabBarTheme(
       labelColor: CPColors.primary,
       unselectedLabelColor: CPColors.muted,
       indicatorColor: CPColors.primary,
@@ -352,10 +402,11 @@ ThemeData createCipherPointTheme() {
       secondarySelectedColor: CPColors.primary.withOpacity(0.16),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       labelStyle: CPTextStyles.labelMedium,
-      secondaryLabelStyle: CPTextStyles.labelMedium.copyWith(color: CPColors.primary),
+      secondaryLabelStyle:
+          CPTextStyles.labelMedium.copyWith(color: CPColors.primary),
       side: const BorderSide(color: CPColors.line),
-      selectedSide: const BorderSide(color: CPColors.primary, width: 1.5),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.pill)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.pill)),
     ),
     dividerTheme: DividerThemeData(
       color: CPColors.line,
@@ -370,7 +421,8 @@ ThemeData createCipherPointTheme() {
       titleTextStyle: CPTextStyles.titleMedium,
       subtitleTextStyle: CPTextStyles.bodySmall,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.md)),
     ),
     tooltipTheme: TooltipThemeData(
       decoration: BoxDecoration(
@@ -403,12 +455,13 @@ ThemeData createCipherPointTheme() {
         return CPColors.muted;
       }),
       trackColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) return CPColors.success.withOpacity(0.3);
+        if (states.contains(WidgetState.selected))
+          return CPColors.success.withOpacity(0.3);
         return CPColors.bg800;
       }),
       trackOutlineColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) return WidgetStateProperty.all(CPColors.success);
-        return WidgetStateProperty.all(CPColors.line);
+        if (states.contains(WidgetState.selected)) return CPColors.success;
+        return CPColors.line;
       }),
     ),
     checkboxTheme: CheckboxThemeData(
@@ -418,7 +471,8 @@ ThemeData createCipherPointTheme() {
       }),
       checkColor: WidgetStateProperty.all(const Color(0xFF07111D)),
       side: const BorderSide(color: CPColors.line, width: 1.5),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.xs)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.xs)),
     ),
     radioTheme: RadioThemeData(
       fillColor: WidgetStateProperty.resolveWith((states) {
@@ -433,7 +487,8 @@ ThemeData createCipherPointTheme() {
       focusElevation: 4,
       hoverElevation: 4,
       highlightElevation: 6,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.lg)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.lg)),
     ),
   );
 }

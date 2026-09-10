@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
@@ -9,9 +10,11 @@ import '../../shared/models/models.dart';
 final leaderboardProvider = FutureProvider<CPLeaderboardResponse>((ref) async {
   final client = ref.watch(apiClientProvider);
   final result = await client.getLeaderboard(limit: 100);
-  final users = (result['users'] as List).map((e) => CPLeaderboardEntry.fromJson(e)).toList();
-  final currentUser = result['current_user'] != null 
-      ? CPLeaderboardEntry.fromJson(result['current_user']) 
+  final users = (result['users'] as List)
+      .map((e) => CPLeaderboardEntry.fromJson(e))
+      .toList();
+  final currentUser = result['current_user'] != null
+      ? CPLeaderboardEntry.fromJson(result['current_user'])
       : null;
   return CPLeaderboardResponse(users: users, currentUser: currentUser);
 });
@@ -44,10 +47,12 @@ class LeaderboardScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(CPSpacing.lg),
               sliver: SliverList.separated(
                 itemCount: data.users.length,
-                separatorBuilder: (_, __) => const SizedBox(height: CPSpacing.sm),
+                separatorBuilder: (_, __) =>
+                    const SizedBox(height: CPSpacing.sm),
                 itemBuilder: (context, index) {
                   final entry = data.users[index];
-                  final isCurrentUser = data.currentUser?.userId == entry.userId;
+                  final isCurrentUser =
+                      data.currentUser?.userId == entry.userId;
                   return _LeaderboardTile(
                     rank: index + 1,
                     entry: entry,
@@ -80,7 +85,10 @@ class _CurrentUserCard extends StatelessWidget {
       padding: const EdgeInsets.all(CPSpacing.lg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [CPColors.primary.withOpacity(0.16), CPColors.teal.withOpacity(0.16)],
+          colors: [
+            CPColors.primary.withOpacity(0.16),
+            CPColors.teal.withOpacity(0.16)
+          ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -93,7 +101,8 @@ class _CurrentUserCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: CPColors.primary.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(CPRadius.pill),
@@ -108,14 +117,16 @@ class _CurrentUserCard extends StatelessWidget {
               ),
               const Spacer(),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: CPColors.primary,
                   borderRadius: BorderRadius.circular(CPRadius.pill),
                 ),
                 child: Text(
                   'You',
-                  style: CPTextStyles.labelSmall.copyWith(color: const Color(0xFF07111D)),
+                  style: CPTextStyles.labelSmall
+                      .copyWith(color: const Color(0xFF07111D)),
                 ),
               ),
             ],
@@ -125,22 +136,36 @@ class _CurrentUserCard extends StatelessWidget {
           const SizedBox(height: CPSpacing.sm),
           Row(
             children: [
-              _StatBadge(icon: Icons.flag, label: '${entry.solvedCount ?? 0} solves', color: CPColors.success),
+              _StatBadge(
+                icon: Icons.flag,
+                label: '${entry.solvedCount ?? 0} solves',
+                color: CPColors.success,
+              ),
               const SizedBox(width: CPSpacing.md),
-              _StatBadge(icon: Icons.star, label: '${entry.rankPoints ?? 0} pts', color: CPColors.gold),
+              _StatBadge(
+                icon: Icons.star,
+                label: '${entry.rankPoints ?? 0} pts',
+                color: CPColors.gold,
+              ),
               const SizedBox(width: CPSpacing.md),
-              _StatBadge(icon: Icons.monetization_on, label: '${entry.coins ?? 0} coins', color: CPColors.amber),
+              _StatBadge(
+                icon: Icons.monetization_on,
+                label: '${entry.coins ?? 0} coins',
+                color: CPColors.amber,
+              ),
             ],
           ),
           if (entry.badges != null && entry.badges!.isNotEmpty) ...[
             const SizedBox(height: CPSpacing.md),
             Wrap(
               spacing: CPSpacing.sm,
-              children: entry.badges!.map((badge) => Chip(
-                label: Text(badge, style: CPTextStyles.labelSmall),
-                backgroundColor: CPColors.bg800,
-                side: BorderSide(color: CPColors.line),
-              )).toList(),
+              children: entry.badges!
+                  .map((badge) => Chip(
+                        label: Text(badge, style: CPTextStyles.labelSmall),
+                        backgroundColor: CPColors.bg800,
+                        side: BorderSide(color: CPColors.line),
+                      ))
+                  .toList(),
             ),
           ],
         ],
@@ -154,7 +179,8 @@ class _StatBadge extends StatelessWidget {
   final String label;
   final Color color;
 
-  const _StatBadge({required this.icon, required this.label, required this.color});
+  const _StatBadge(
+      {required this.icon, required this.label, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -191,21 +217,30 @@ class _LeaderboardTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color rankColor;
-    if (rank == 1) rankColor = CPColors.gold;
-    else if (rank == 2) rankColor = const Color(0xFFB0B0B0);
-    else if (rank == 3) rankColor = const Color(0xFFCD7F32);
-    else rankColor = CPColors.muted;
+    if (rank == 1)
+      rankColor = CPColors.gold;
+    else if (rank == 2)
+      rankColor = const Color(0xFFB0B0B0);
+    else if (rank == 3)
+      rankColor = const Color(0xFFCD7F32);
+    else
+      rankColor = CPColors.muted;
 
     return Container(
       decoration: BoxDecoration(
-        color: isCurrentUser ? CPColors.primary.withOpacity(0.06) : CPColors.card,
+        color:
+            isCurrentUser ? CPColors.primary.withOpacity(0.06) : CPColors.card,
         borderRadius: BorderRadius.circular(CPRadius.lg),
         border: Border.all(
-          color: isCurrentUser ? CPColors.primary.withOpacity(0.3) : CPColors.line,
+          color:
+              isCurrentUser ? CPColors.primary.withOpacity(0.3) : CPColors.line,
         ),
       ),
       child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: CPSpacing.lg, vertical: CPSpacing.sm),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: CPSpacing.lg,
+          vertical: CPSpacing.sm,
+        ),
         leading: SizedBox(
           width: 40,
           child: Text(
@@ -228,7 +263,11 @@ class _LeaderboardTile extends StatelessWidget {
                   color: CPColors.primary.withOpacity(0.16),
                   borderRadius: BorderRadius.circular(CPRadius.pill),
                 ),
-                child: Text('You', style: CPTextStyles.labelSmall.copyWith(color: CPColors.primary)),
+                child: Text(
+                  'You',
+                  style:
+                      CPTextStyles.labelSmall.copyWith(color: CPColors.primary),
+                ),
               ),
           ],
         ),
@@ -242,7 +281,11 @@ class _LeaderboardTile extends StatelessWidget {
                 children: [
                   Icon(Icons.monetization_on, size: 16, color: CPColors.amber),
                   const SizedBox(width: 4),
-                  Text('${entry.coins}', style: CPTextStyles.labelMedium.copyWith(color: CPColors.amber)),
+                  Text(
+                    '${entry.coins}',
+                    style: CPTextStyles.labelMedium
+                        .copyWith(color: CPColors.amber),
+                  ),
                 ],
               )
             : null,
@@ -289,9 +332,11 @@ class _ErrorState extends StatelessWidget {
           children: [
             const Icon(Icons.error_outline, size: 48, color: CPColors.danger),
             const SizedBox(height: CPSpacing.md),
-            Text('Failed to load leaderboard', style: CPTextStyles.headlineSmall),
+            Text('Failed to load leaderboard',
+                style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.xs),
-            Text(error, style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
+            Text(error,
+                style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
             const SizedBox(height: CPSpacing.lg),
             FilledButton(onPressed: onRetry, child: const Text('Retry')),
           ],

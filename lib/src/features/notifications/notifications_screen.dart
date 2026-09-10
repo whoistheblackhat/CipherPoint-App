@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
@@ -27,10 +28,14 @@ class NotificationsScreen extends ConsumerWidget {
           Consumer(
             builder: (context, ref, _) {
               final async = ref.watch(notificationsProvider);
-              if (async.hasValue && async.value!.any((n) => !n.read)) {
+              if (async.hasValue && async.value!.any((n) => n.read == false)) {
                 return TextButton(
                   onPressed: () => _markAllRead(ref),
-                  child: Text('Mark all read', style: CPTextStyles.labelMedium.copyWith(color: CPColors.primary)),
+                  child: Text(
+                    'Mark all read',
+                    style: CPTextStyles.labelMedium
+                        .copyWith(color: CPColors.primary),
+                  ),
                 );
               }
               return const SizedBox.shrink();
@@ -81,7 +86,7 @@ class NotificationsScreen extends ConsumerWidget {
     final client = ref.read(apiClientProvider);
     final notifications = ref.read(notificationsProvider).value ?? [];
     for (final n in notifications) {
-      if (!n.read) {
+      if (n.read == false) {
         try {
           await client.markNotificationRead(n.id);
         } catch (_) {}
@@ -91,7 +96,7 @@ class NotificationsScreen extends ConsumerWidget {
   }
 
   void _handleTap(BuildContext context, WidgetRef ref, CPNotification n) {
-    if (!n.read) {
+    if (n.read == false) {
       final client = ref.read(apiClientProvider);
       client.markNotificationRead(n.id);
       ref.invalidate(notificationsProvider);
@@ -120,12 +125,16 @@ class _NotificationTile extends StatelessWidget {
 
     return Card(
       margin: const EdgeInsets.only(bottom: CPSpacing.md),
-      color: notification.read ? CPColors.card : CPColors.primary.withOpacity(0.04),
+      color: notification.read == true
+          ? CPColors.card
+          : CPColors.primary.withOpacity(0.04),
       borderOnForeground: true,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(CPRadius.lg),
         side: BorderSide(
-          color: notification.read ? CPColors.line : CPColors.primary.withOpacity(0.3),
+          color: notification.read == true
+              ? CPColors.line
+              : CPColors.primary.withOpacity(0.3),
         ),
       ),
       child: InkWell(
@@ -155,11 +164,13 @@ class _NotificationTile extends StatelessWidget {
                           child: Text(
                             notification.title,
                             style: CPTextStyles.titleMedium.copyWith(
-                              fontWeight: notification.read ? FontWeight.w500 : FontWeight.w700,
+                              fontWeight: notification.read == true
+                                  ? FontWeight.w500
+                                  : FontWeight.w700,
                             ),
                           ),
                         ),
-                        if (!notification.read)
+                        if (notification.read != true)
                           Container(
                             width: 8,
                             height: 8,
@@ -171,7 +182,12 @@ class _NotificationTile extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: CPSpacing.xs),
-                    Text(notification.body, style: CPTextStyles.bodyMedium, maxLines: 2, overflow: TextOverflow.ellipsis),
+                    Text(
+                      notification.body,
+                      style: CPTextStyles.bodyMedium,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     const SizedBox(height: CPSpacing.xs),
                     Text(
                       _formatDate(notification.createdAt),
@@ -190,25 +206,39 @@ class _NotificationTile extends StatelessWidget {
 
   IconData _getIcon(String type) {
     switch (type) {
-      case 'challenge_solved': return Icons.flag;
-      case 'comment': return Icons.comment;
-      case 'mention': return Icons.alternate_email;
-      case 'new_challenge': return Icons.add_circle;
-      case 'rank_change': return Icons.trending_up;
-      case 'badge_earned': return Icons.emoji_events;
-      default: return Icons.notifications;
+      case 'challenge_solved':
+        return Icons.flag;
+      case 'comment':
+        return Icons.comment;
+      case 'mention':
+        return Icons.alternate_email;
+      case 'new_challenge':
+        return Icons.add_circle;
+      case 'rank_change':
+        return Icons.trending_up;
+      case 'badge_earned':
+        return Icons.emoji_events;
+      default:
+        return Icons.notifications;
     }
   }
 
   Color _getColor(String type) {
     switch (type) {
-      case 'challenge_solved': return CPColors.success;
-      case 'comment': return CPColors.primary;
-      case 'mention': return CPColors.amber;
-      case 'new_challenge': return CPColors.teal;
-      case 'rank_change': return CPColors.gold;
-      case 'badge_earned': return CPColors.purple;
-      default: return CPColors.muted;
+      case 'challenge_solved':
+        return CPColors.success;
+      case 'comment':
+        return CPColors.primary;
+      case 'mention':
+        return CPColors.amber;
+      case 'new_challenge':
+        return CPColors.teal;
+      case 'rank_change':
+        return CPColors.gold;
+      case 'badge_earned':
+        return CPColors.purple;
+      default:
+        return CPColors.muted;
     }
   }
 
@@ -240,13 +270,23 @@ class _NotificationSkeleton extends StatelessWidget {
           padding: const EdgeInsets.all(CPSpacing.lg),
           child: Row(
             children: [
-              Container(width: 44, height: 44, decoration: BoxDecoration(color: CPColors.bg800, borderRadius: BorderRadius.circular(CPRadius.md))),
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: CPColors.bg800,
+                  borderRadius: BorderRadius.circular(CPRadius.md),
+                ),
+              ),
               const SizedBox(width: CPSpacing.md),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(height: 18, width: double.infinity, color: CPColors.bg800),
+                    Container(
+                        height: 18,
+                        width: double.infinity,
+                        color: CPColors.bg800),
                     const SizedBox(height: 8),
                     Container(height: 14, width: 200, color: CPColors.bg800),
                     const SizedBox(height: 8),
@@ -287,7 +327,8 @@ class _EmptyState extends StatelessWidget {
             const SizedBox(height: CPSpacing.lg),
             Text(title, style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.sm),
-            Text(subtitle, style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
+            Text(subtitle,
+                style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
             if (action != null) ...[
               const SizedBox(height: CPSpacing.xl),
               action!,

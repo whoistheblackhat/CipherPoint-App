@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
-final intelVaultProvider = FutureProvider.family<List<CPIntelArticle>, String?>((ref, category) async {
+final intelVaultProvider =
+    FutureProvider.family<List<CPIntelArticle>, String?>((ref, category) async {
   final client = ref.watch(apiClientProvider);
   final result = await client.getIntelArticles(category: category, limit: 50);
   return result.map((e) => CPIntelArticle.fromJson(e)).toList();
@@ -33,7 +35,9 @@ class _IntelVaultScreenState extends ConsumerState<IntelVaultScreen> {
   @override
   Widget build(BuildContext context) {
     final categories = ['All', ...CPCategories.intelCategories];
-    final articlesAsync = ref.watch(intelVaultProvider(_selectedCategory == 'All' ? null : _selectedCategory));
+    final articlesAsync = ref.watch(
+      intelVaultProvider(_selectedCategory == 'All' ? null : _selectedCategory),
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -57,19 +61,22 @@ class _IntelVaultScreenState extends ConsumerState<IntelVaultScreen> {
               separatorBuilder: (_, __) => const SizedBox(width: CPSpacing.sm),
               itemBuilder: (context, index) {
                 final cat = categories[index];
-                final isSelected = _selectedCategory == cat || (_selectedCategory == null && cat == 'All');
+                final isSelected = _selectedCategory == cat ||
+                    (_selectedCategory == null && cat == 'All');
                 return FilterChip(
                   label: Text(cat),
                   selected: isSelected,
                   onSelected: (selected) {
                     setState(() {
-                      _selectedCategory = selected ? (cat == 'All' ? null : cat) : null;
+                      _selectedCategory =
+                          selected ? (cat == 'All' ? null : cat) : null;
                     });
                   },
-                  selectedColor: CPColors.teal.withOpacity(0.16),
                   checkmarkColor: CPColors.teal,
-                  side: BorderSide(color: isSelected ? CPColors.teal : CPColors.line),
-                  labelStyle: TextStyle(color: isSelected ? CPColors.teal : CPColors.text),
+                  side: BorderSide(
+                      color: isSelected ? CPColors.teal : CPColors.line),
+                  labelStyle: TextStyle(
+                      color: isSelected ? CPColors.teal : CPColors.text),
                 );
               },
             ),
@@ -126,13 +133,15 @@ class _IntelVaultScreenState extends ConsumerState<IntelVaultScreen> {
   }
 
   void _showCategorySheet() {
+    final categories = ['All', ...CPCategories.intelCategories];
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
         decoration: const BoxDecoration(
           color: CPColors.panel,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(CPRadius.xl)),
+          borderRadius:
+              BorderRadius.vertical(top: Radius.circular(CPRadius.xl)),
         ),
         padding: const EdgeInsets.all(CPSpacing.xl),
         child: Column(
@@ -145,12 +154,14 @@ class _IntelVaultScreenState extends ConsumerState<IntelVaultScreen> {
               spacing: CPSpacing.sm,
               runSpacing: CPSpacing.sm,
               children: categories.map((cat) {
-                final isSelected = _selectedCategory == cat || (_selectedCategory == null && cat == 'All');
+                final isSelected = _selectedCategory == cat ||
+                    (_selectedCategory == null && cat == 'All');
                 return FilterChip(
                   label: Text(cat),
                   selected: isSelected,
                   onSelected: (s) {
-                    setState(() => _selectedCategory = s ? (cat == 'All' ? null : cat) : null);
+                    setState(() => _selectedCategory =
+                        s ? (cat == 'All' ? null : cat) : null);
                     Navigator.pop(context);
                   },
                 );
@@ -185,7 +196,8 @@ class _IntelCard extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
                       color: CPColors.teal.withOpacity(0.12),
                       border: Border.all(color: CPColors.teal.withOpacity(0.3)),
@@ -193,7 +205,8 @@ class _IntelCard extends StatelessWidget {
                     ),
                     child: Text(
                       'lab/${article.category}',
-                      style: CPTextStyles.labelSmall.copyWith(color: CPColors.teal),
+                      style: CPTextStyles.labelSmall
+                          .copyWith(color: CPColors.teal),
                     ),
                   ),
                   const Spacer(),
@@ -215,7 +228,8 @@ class _IntelCard extends StatelessWidget {
                 const SizedBox(height: CPSpacing.sm),
                 Text(
                   article.summary!,
-                  style: CPTextStyles.bodyMedium.copyWith(color: CPColors.muted),
+                  style:
+                      CPTextStyles.bodyMedium.copyWith(color: CPColors.muted),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -233,10 +247,12 @@ class _IntelCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    Text(article.authorUsername!, style: CPTextStyles.bodySmall),
+                    Text(article.authorUsername!,
+                        style: CPTextStyles.bodySmall),
                   ],
                   const Spacer(),
-                  const Icon(Icons.chevron_right, color: CPColors.muted, size: 20),
+                  const Icon(Icons.chevron_right,
+                      color: CPColors.muted, size: 20),
                 ],
               ),
             ],
@@ -271,13 +287,21 @@ class _IntelSkeleton extends StatelessWidget {
             children: [
               Container(height: 20, width: 80, color: CPColors.bg800),
               const SizedBox(height: 12),
-              Container(height: 24, width: double.infinity, color: CPColors.bg800),
+              Container(
+                  height: 24, width: double.infinity, color: CPColors.bg800),
               const SizedBox(height: 8),
               Container(height: 16, width: 200, color: CPColors.bg800),
               const SizedBox(height: 12),
               Row(
                 children: [
-                  Container(width: 28, height: 28, decoration: BoxDecoration(color: CPColors.bg800, shape: BoxShape.circle)),
+                  Container(
+                    width: 28,
+                    height: 28,
+                    decoration: BoxDecoration(
+                      color: CPColors.bg800,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
                   const SizedBox(width: 8),
                   Container(height: 14, width: 100, color: CPColors.bg800),
                 ],
@@ -315,7 +339,8 @@ class _EmptyState extends StatelessWidget {
             const SizedBox(height: CPSpacing.lg),
             Text(title, style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.sm),
-            Text(subtitle, style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
+            Text(subtitle,
+                style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
             if (action != null) ...[
               const SizedBox(height: CPSpacing.xl),
               action!,

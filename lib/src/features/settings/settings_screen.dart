@@ -18,7 +18,12 @@ class SettingsScreen extends ConsumerWidget {
 
     if (user == null) {
       return Scaffold(
-        body: Center(child: FilledButton(onPressed: () => context.go('/login'), child: const Text('Login'))),
+        body: Center(
+          child: FilledButton(
+            onPressed: () => context.go('/login'),
+            child: const Text('Login'),
+          ),
+        ),
       );
     }
 
@@ -33,31 +38,41 @@ class SettingsScreen extends ConsumerWidget {
               ListTile(
                 leading: const Icon(Icons.person_outline, color: CPColors.text),
                 title: Text('Edit Profile', style: CPTextStyles.bodyMedium),
-                trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
+                trailing:
+                    const Icon(Icons.chevron_right, color: CPColors.muted),
                 onTap: () => context.push('/profile'),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(CPRadius.md),
+                ),
                 tileColor: CPColors.card,
               ),
               const SizedBox(height: CPSpacing.sm),
               ListTile(
                 leading: const Icon(Icons.lock_outline, color: CPColors.text),
                 title: Text('Change Password', style: CPTextStyles.bodyMedium),
-                trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
+                trailing:
+                    const Icon(Icons.chevron_right, color: CPColors.muted),
                 onTap: () => _showChangePasswordDialog(context),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(CPRadius.md),
+                ),
                 tileColor: CPColors.card,
               ),
               const SizedBox(height: CPSpacing.sm),
               ListTile(
                 leading: const Icon(Icons.telegram, color: CPColors.text),
-                title: Text('Telegram Connection', style: CPTextStyles.bodyMedium),
+                title:
+                    Text('Telegram Connection', style: CPTextStyles.bodyMedium),
                 subtitle: Text(
                   user.telegramChatId != null ? 'Connected' : 'Not connected',
                   style: CPTextStyles.bodySmall,
                 ),
-                trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
+                trailing:
+                    const Icon(Icons.chevron_right, color: CPColors.muted),
                 onTap: () => _showTelegramDialog(context, ref),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(CPRadius.md),
+                ),
                 tileColor: CPColors.card,
               ),
             ],
@@ -70,25 +85,29 @@ class SettingsScreen extends ConsumerWidget {
                 title: 'New Challenges',
                 subtitle: 'Get notified when new challenges are published',
                 value: user.notifyNewChallenges == 1,
-                onChanged: (v) => _updateNotification(ref, user, 'notify_new_challenges', v),
+                onChanged: (v) =>
+                    _updateNotification(ref, user, 'notify_new_challenges', v),
               ),
               _SwitchTile(
                 title: 'Comments',
                 subtitle: 'Notify when someone comments on your challenges',
                 value: user.notifyComments == 1,
-                onChanged: (v) => _updateNotification(ref, user, 'notify_comments', v),
+                onChanged: (v) =>
+                    _updateNotification(ref, user, 'notify_comments', v),
               ),
               _SwitchTile(
                 title: 'Mentions',
                 subtitle: 'Notify when you are mentioned in comments',
                 value: user.notifyMentions == 1,
-                onChanged: (v) => _updateNotification(ref, user, 'notify_mentions', v),
+                onChanged: (v) =>
+                    _updateNotification(ref, user, 'notify_mentions', v),
               ),
               _SwitchTile(
                 title: 'Telegram Notifications',
                 subtitle: 'Receive notifications via Telegram bot',
-                value: user.telegramNotifications == 1,
-                onChanged: (v) => _updateNotification(ref, user, 'telegram_notifications', v),
+                value: user.telegramNotifications == true,
+                onChanged: (v) =>
+                    _updateNotification(ref, user, 'telegram_notifications', v),
               ),
             ],
           ),
@@ -99,13 +118,14 @@ class SettingsScreen extends ConsumerWidget {
               _SwitchTile(
                 title: 'Public Profile',
                 subtitle: 'Allow others to view your profile',
-                value: user.publicProfile == 1,
-                onChanged: (v) => _updatePrivacy(ref, user, 'public_profile', v),
+                value: user.publicProfile == true,
+                onChanged: (v) =>
+                    _updatePrivacy(ref, user, 'public_profile', v),
               ),
               _SwitchTile(
                 title: 'Hide Email',
                 subtitle: 'Hide your email from public profile',
-                value: user.hideEmail == 1,
+                value: user.hideEmail == true,
                 onChanged: (v) => _updatePrivacy(ref, user, 'hide_email', v),
               ),
             ],
@@ -117,22 +137,26 @@ class SettingsScreen extends ConsumerWidget {
               ListTile(
                 leading: const Icon(Icons.fingerprint, color: CPColors.text),
                 title: Text('Biometric Lock', style: CPTextStyles.bodyMedium),
-                subtitle: Text('Lock app with fingerprint/Face ID', style: CPTextStyles.bodySmall),
+                subtitle: Text('Lock app with fingerprint/Face ID',
+                    style: CPTextStyles.bodySmall),
                 trailing: Switch(
                   value: false,
                   onChanged: (v) {},
                   activeColor: CPColors.primary,
                 ),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(CPRadius.md)),
                 tileColor: CPColors.card,
               ),
               const SizedBox(height: CPSpacing.sm),
               ListTile(
                 leading: const Icon(Icons.history, color: CPColors.text),
                 title: Text('Login History', style: CPTextStyles.bodyMedium),
-                trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
+                trailing:
+                    const Icon(Icons.chevron_right, color: CPColors.muted),
                 onTap: () {},
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(CPRadius.md)),
                 tileColor: CPColors.card,
               ),
             ],
@@ -143,18 +167,32 @@ class SettingsScreen extends ConsumerWidget {
             children: [
               ListTile(
                 leading: const Icon(Icons.logout, color: CPColors.danger),
-                title: Text('Logout', style: CPTextStyles.bodyMedium.copyWith(color: CPColors.danger)),
+                title: Text(
+                  'Logout',
+                  style:
+                      CPTextStyles.bodyMedium.copyWith(color: CPColors.danger),
+                ),
                 onTap: () => _logout(context, ref),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(CPRadius.md)),
                 tileColor: CPColors.card,
               ),
               const SizedBox(height: CPSpacing.sm),
               ListTile(
-                leading: const Icon(Icons.delete_forever, color: CPColors.danger),
-                title: Text('Delete Account', style: CPTextStyles.bodyMedium.copyWith(color: CPColors.danger)),
-                subtitle: Text('Permanently delete your account and all data', style: CPTextStyles.bodySmall),
+                leading:
+                    const Icon(Icons.delete_forever, color: CPColors.danger),
+                title: Text(
+                  'Delete Account',
+                  style:
+                      CPTextStyles.bodyMedium.copyWith(color: CPColors.danger),
+                ),
+                subtitle: Text(
+                  'Permanently delete your account and all data',
+                  style: CPTextStyles.bodySmall,
+                ),
                 onTap: () => _showDeleteAccountDialog(context),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(CPRadius.md)),
                 tileColor: CPColors.card,
               ),
             ],
@@ -175,7 +213,10 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: CPColors.panel,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.xl), side: BorderSide(color: CPColors.line)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.xl),
+          side: BorderSide(color: CPColors.line),
+        ),
         title: Text('Change Password', style: CPTextStyles.headlineSmall),
         content: Form(
           key: formKey,
@@ -184,7 +225,8 @@ class SettingsScreen extends ConsumerWidget {
             children: [
               TextFormField(
                 controller: oldController,
-                decoration: const InputDecoration(labelText: 'Current Password'),
+                decoration:
+                    const InputDecoration(labelText: 'Current Password'),
                 obscureText: true,
                 validator: (v) => v?.isEmpty ?? true ? 'Required' : null,
               ),
@@ -193,26 +235,32 @@ class SettingsScreen extends ConsumerWidget {
                 controller: newController,
                 decoration: const InputDecoration(labelText: 'New Password'),
                 obscureText: true,
-                validator: (v) => v != null && v.length >= 8 ? null : 'Min 8 characters',
+                validator: (v) =>
+                    v != null && v.length >= 8 ? null : 'Min 8 characters',
               ),
               const SizedBox(height: CPSpacing.md),
               TextFormField(
                 controller: confirmController,
-                decoration: const InputDecoration(labelText: 'Confirm New Password'),
+                decoration:
+                    const InputDecoration(labelText: 'Confirm New Password'),
                 obscureText: true,
-                validator: (v) => v == newController.text ? null : 'Passwords must match',
+                validator: (v) =>
+                    v == newController.text ? null : 'Passwords must match',
               ),
             ],
           ),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel')),
           FilledButton(
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Password changed! (API not implemented)')),
+                  const SnackBar(
+                      content: Text('Password changed! (API not implemented)')),
                 );
               }
             },
@@ -228,17 +276,23 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: CPColors.panel,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.xl), side: BorderSide(color: CPColors.line)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.xl),
+          side: BorderSide(color: CPColors.line),
+        ),
         title: Text('Telegram Bot', style: CPTextStyles.headlineSmall),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Connect your Telegram to receive notifications.', style: CPTextStyles.bodyMedium),
+            Text('Connect your Telegram to receive notifications.',
+                style: CPTextStyles.bodyMedium),
             const SizedBox(height: CPSpacing.lg),
-            Text('1. Open @CipherPointBot on Telegram', style: CPTextStyles.bodySmall),
+            Text('1. Open @CipherPointBot on Telegram',
+                style: CPTextStyles.bodySmall),
             Text('2. Send /start', style: CPTextStyles.bodySmall),
-            Text('3. Send /link <your_username>', style: CPTextStyles.bodySmall),
+            Text('3. Send /link <your_username>',
+                style: CPTextStyles.bodySmall),
             const SizedBox(height: CPSpacing.lg),
             FilledButton(
               onPressed: () => Navigator.pop(context),
@@ -250,7 +304,8 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  Future<void> _updateNotification(WidgetRef ref, CPUser user, String field, bool value) async {
+  Future<void> _updateNotification(
+      WidgetRef ref, CPUser user, String field, bool value) async {
     final client = ref.read(apiClientProvider);
     try {
       await client.updateProfile({field: value ? 1 : 0});
@@ -260,7 +315,8 @@ class SettingsScreen extends ConsumerWidget {
     }
   }
 
-  Future<void> _updatePrivacy(WidgetRef ref, CPUser user, String field, bool value) async {
+  Future<void> _updatePrivacy(
+      WidgetRef ref, CPUser user, String field, bool value) async {
     final client = ref.read(apiClientProvider);
     try {
       await client.updateProfile({field: value ? 1 : 0});
@@ -275,11 +331,17 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: CPColors.panel,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.xl), side: BorderSide(color: CPColors.line)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.xl),
+          side: BorderSide(color: CPColors.line),
+        ),
         title: Text('Logout', style: CPTextStyles.headlineSmall),
-        content: Text('Are you sure you want to logout?', style: CPTextStyles.bodyMedium),
+        content: Text('Are you sure you want to logout?',
+            style: CPTextStyles.bodyMedium),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel')),
           FilledButton(
             onPressed: () async {
               Navigator.pop(context);
@@ -299,16 +361,28 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: CPColors.panel,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.xl), side: BorderSide(color: CPColors.line)),
-        title: Text('Delete Account', style: CPTextStyles.headlineSmall.copyWith(color: CPColors.danger)),
-        content: Text('This action is irreversible. All your data will be permanently deleted.', style: CPTextStyles.bodyMedium),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CPRadius.xl),
+          side: BorderSide(color: CPColors.line),
+        ),
+        title: Text(
+          'Delete Account',
+          style: CPTextStyles.headlineSmall.copyWith(color: CPColors.danger),
+        ),
+        content: Text(
+          'This action is irreversible. All your data will be permanently deleted.',
+          style: CPTextStyles.bodyMedium,
+        ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancel')),
           FilledButton(
             onPressed: () {
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Account deletion not implemented yet')),
+                const SnackBar(
+                    content: Text('Account deletion not implemented yet')),
               );
             },
             style: FilledButton.styleFrom(backgroundColor: CPColors.danger),
@@ -365,9 +439,13 @@ class _SwitchTile extends StatelessWidget {
             onChanged: onChanged,
             activeColor: CPColors.primary,
           ),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(CPRadius.md)),
           tileColor: CPColors.card,
-          contentPadding: const EdgeInsets.symmetric(horizontal: CPSpacing.lg, vertical: CPSpacing.sm),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: CPSpacing.lg,
+            vertical: CPSpacing.sm,
+          ),
         ),
       ),
     );

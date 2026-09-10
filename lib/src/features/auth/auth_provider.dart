@@ -2,7 +2,7 @@
 
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../api/api_client.dart';
+import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
 part 'auth_provider.g.dart';
@@ -95,8 +95,8 @@ Stream<void> authLogoutStream(AuthLogoutStreamRef ref) {
 
 @riverpod
 Future<void> authLogoutListener(AuthLogoutListenerRef ref) async {
-  final stream = ref.watch(authLogoutStreamProvider);
-  await for (final _ in stream) {
-    ref.invalidate(authStateProvider);
-  }
+  ref.listen(authLogoutStreamProvider, (_, next) {
+    next.whenOrNull(data: (_) => ref.invalidate(authStateProvider));
+  });
+  ref.keepAlive();
 }

@@ -27,12 +27,14 @@ class CPApiClient {
   String? _accessToken;
   StreamController<void>? _logoutController;
 
-  Stream<void> get onLogout => _logoutController?.stream ?? const Stream.empty();
+  Stream<void> get onLogout =>
+      _logoutController?.stream ?? const Stream.empty();
 
   Future<void> init() async {
     _storage = const FlutterSecureStorage(
       aOptions: AndroidOptions(encryptedSharedPreferences: true),
-      iOptions: IOSOptions(accessibility: KeychainAccessibility.first_unlock_this_device),
+      iOptions: IOSOptions(
+          accessibility: KeychainAccessibility.first_unlock_this_device),
     );
     _connectivity = Connectivity();
 
@@ -209,7 +211,8 @@ class CPApiClient {
 
   // Leaderboard
   Future<Map<String, dynamic>> getLeaderboard({int limit = 100}) async {
-    final resp = await _dio.get('/leaderboard', queryParameters: {'limit': limit});
+    final resp =
+        await _dio.get('/leaderboard', queryParameters: {'limit': limit});
     return resp.data;
   }
 
@@ -262,7 +265,8 @@ class CPApiClient {
 
   // Notifications
   Future<List<Map<String, dynamic>>> getNotifications({int limit = 50}) async {
-    final resp = await _dio.get('/notifications', queryParameters: {'limit': limit});
+    final resp =
+        await _dio.get('/notifications', queryParameters: {'limit': limit});
     return List<Map<String, dynamic>>.from(resp.data);
   }
 

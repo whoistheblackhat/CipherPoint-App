@@ -8,10 +8,10 @@ import 'src/app/router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Preload fonts
   GoogleFonts.config.allowRuntimeFetching = false;
-  
+
   runApp(const ProviderScope(child: CipherPointApp()));
 }
 
@@ -33,7 +33,9 @@ class CipherPointApp extends ConsumerWidget {
       builder: (context, child) {
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(
-            textScaler: TextScaler.linear(MediaQuery.of(context).textScaler.scale(1.0).clamp(0.85, 1.15)),
+            textScaler: TextScaler.linear(
+              MediaQuery.of(context).textScaler.scale(1.0).clamp(0.85, 1.15),
+            ),
           ),
           child: child!,
         );

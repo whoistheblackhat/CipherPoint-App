@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
-final intelArticleProvider = FutureProvider.family<CPIntelArticle, int>((ref, id) async {
+final intelArticleProvider =
+    FutureProvider.family<CPIntelArticle, int>((ref, id) async {
   final client = ref.watch(apiClientProvider);
   final result = await client.getIntelArticle(id);
   return CPIntelArticle.fromJson(result);
@@ -47,7 +49,8 @@ class IntelArticleScreen extends ConsumerWidget {
           ],
         ),
         loading: () => _ArticleSkeleton(),
-        error: (e, _) => _ArticleError(error: e.toString(), articleId: articleId),
+        error: (e, _) =>
+            _ArticleError(error: e.toString(), articleId: articleId),
       ),
     );
   }
@@ -71,14 +74,18 @@ class _ArticleAppBar extends StatelessWidget {
                   Image.network(
                     'https://cipherpoint.linkpc.net/api/media/${article.telegramFileId}',
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Container(color: CPColors.bg800),
+                    errorBuilder: (_, __, ___) =>
+                        Container(color: CPColors.bg800),
                   ),
                   Container(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [Colors.transparent, CPColors.bg950.withOpacity(0.9)],
+                        colors: [
+                          Colors.transparent,
+                          CPColors.bg950.withOpacity(0.9)
+                        ],
                       ),
                     ),
                   ),
@@ -112,7 +119,10 @@ class _ArticleAppBar extends StatelessWidget {
             Text(
               article.title,
               style: CPTextStyles.headlineMedium.copyWith(
-                shadows: [const Shadow(color: Colors.black, blurRadius: 4, offset: Offset(0, 2))],
+                shadows: [
+                  const Shadow(
+                      color: Colors.black, blurRadius: 4, offset: Offset(0, 2))
+                ],
               ),
             ),
           ],
@@ -143,7 +153,10 @@ class _ArticleMeta extends StatelessWidget {
             children: [
               const Icon(Icons.tag, size: 14, color: CPColors.teal),
               const SizedBox(width: 6),
-              Text('lab/${article.category}', style: CPTextStyles.labelMedium.copyWith(color: CPColors.teal)),
+              Text(
+                'lab/${article.category}',
+                style: CPTextStyles.labelMedium.copyWith(color: CPColors.teal),
+              ),
             ],
           ),
         ),
@@ -180,7 +193,8 @@ class _ArticleMedia extends StatelessWidget {
         errorBuilder: (_, __, ___) => Container(
           height: 200,
           color: CPColors.bg800,
-          child: const Center(child: Icon(Icons.broken_image, color: CPColors.muted)),
+          child: const Center(
+              child: Icon(Icons.broken_image, color: CPColors.muted)),
         ),
       ),
     );
@@ -206,7 +220,8 @@ class _ArticleContent extends StatelessWidget {
               borderRadius: BorderRadius.circular(CPRadius.lg),
               border: Border.all(color: CPColors.teal.withOpacity(0.3)),
             ),
-            child: Text(article.summary!, style: CPTextStyles.bodyMedium.copyWith(height: 1.7)),
+            child: Text(article.summary!,
+                style: CPTextStyles.bodyMedium.copyWith(height: 1.7)),
           ),
           const SizedBox(height: CPSpacing.lg),
         ],
@@ -238,9 +253,15 @@ class _ArticleSkeleton extends StatelessWidget {
                 children: [
                   Container(height: 20, width: 100, color: CPColors.bg800),
                   const SizedBox(height: 16),
-                  Container(height: 200, width: double.infinity, color: CPColors.bg800),
+                  Container(
+                      height: 200,
+                      width: double.infinity,
+                      color: CPColors.bg800),
                   const SizedBox(height: 24),
-                  Container(height: 400, width: double.infinity, color: CPColors.bg800),
+                  Container(
+                      height: 400,
+                      width: double.infinity,
+                      color: CPColors.bg800),
                 ],
               ),
             ),
@@ -271,7 +292,8 @@ class _ArticleError extends StatelessWidget {
               const SizedBox(height: CPSpacing.md),
               Text('Failed to load article', style: CPTextStyles.headlineSmall),
               const SizedBox(height: CPSpacing.xs),
-              Text(error, style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
+              Text(error,
+                  style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
               const SizedBox(height: CPSpacing.lg),
               FilledButton(
                 onPressed: () => context.go('/intel/$articleId'),

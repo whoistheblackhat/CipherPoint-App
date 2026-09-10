@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
-final communityChallengesProvider = FutureProvider<List<CPChallenge>>((ref) async {
+final communityChallengesProvider =
+    FutureProvider<List<CPChallenge>>((ref) async {
   final client = ref.watch(apiClientProvider);
   final result = await client.getCommunityChallenges(limit: 50);
   return result.map((e) => CPChallenge.fromJson(e)).toList();
@@ -121,28 +123,34 @@ class _CommunityCard extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
                       color: challenge.categoryColor.withOpacity(0.12),
-                      border: Border.all(color: challenge.categoryColor.withOpacity(0.3)),
+                      border: Border.all(
+                          color: challenge.categoryColor.withOpacity(0.3)),
                       borderRadius: BorderRadius.circular(CPRadius.pill),
                     ),
                     child: Text(
                       'lab/${challenge.category}',
-                      style: CPTextStyles.labelSmall.copyWith(color: challenge.categoryColor),
+                      style: CPTextStyles.labelSmall
+                          .copyWith(color: challenge.categoryColor),
                     ),
                   ),
                   const SizedBox(width: CPSpacing.sm),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
                       color: challenge.difficultyColor.withOpacity(0.12),
-                      border: Border.all(color: challenge.difficultyColor.withOpacity(0.3)),
+                      border: Border.all(
+                          color: challenge.difficultyColor.withOpacity(0.3)),
                       borderRadius: BorderRadius.circular(CPRadius.pill),
                     ),
                     child: Text(
                       challenge.difficultyLabel,
-                      style: CPTextStyles.labelSmall.copyWith(color: challenge.difficultyColor),
+                      style: CPTextStyles.labelSmall
+                          .copyWith(color: challenge.difficultyColor),
                     ),
                   ),
                   const Spacer(),
@@ -165,19 +173,23 @@ class _CommunityCard extends StatelessWidget {
                 children: [
                   Icon(Icons.flag, size: 14, color: CPColors.muted),
                   const SizedBox(width: 4),
-                  Text('${challenge.pointsReward ?? 0} pts', style: CPTextStyles.bodySmall),
+                  Text('${challenge.pointsReward ?? 0} pts',
+                      style: CPTextStyles.bodySmall),
                   const SizedBox(width: 12),
-                  if (challenge.solvedCount != null && challenge.solvedCount! > 0) ...[
+                  if (challenge.solvedCount != null &&
+                      challenge.solvedCount! > 0) ...[
                     Icon(Icons.check_circle, size: 14, color: CPColors.success),
                     const SizedBox(width: 4),
                     Text(
                       '${challenge.solvedCount} solves',
-                      style: CPTextStyles.bodySmall.copyWith(color: CPColors.success),
+                      style: CPTextStyles.bodySmall
+                          .copyWith(color: CPColors.success),
                     ),
                   ],
                   const Spacer(),
                   if (challenge.createdBy != null)
-                    Text('by User #${challenge.createdBy}', style: CPTextStyles.bodySmall),
+                    Text('by User #${challenge.createdBy}',
+                        style: CPTextStyles.bodySmall),
                 ],
               ),
             ],
@@ -203,7 +215,8 @@ class _CommunitySkeleton extends StatelessWidget {
             children: [
               Container(height: 20, width: 100, color: CPColors.bg800),
               const SizedBox(height: 12),
-              Container(height: 24, width: double.infinity, color: CPColors.bg800),
+              Container(
+                  height: 24, width: double.infinity, color: CPColors.bg800),
               const SizedBox(height: 8),
               Container(height: 14, width: 150, color: CPColors.bg800),
             ],
@@ -216,10 +229,12 @@ class _CommunitySkeleton extends StatelessWidget {
 
 class _CreateChallengeDialog extends ConsumerStatefulWidget {
   @override
-  ConsumerState<_CreateChallengeDialog> createState() => _CreateChallengeDialogState();
+  ConsumerState<_CreateChallengeDialog> createState() =>
+      _CreateChallengeDialogState();
 }
 
-class _CreateChallengeDialogState extends ConsumerState<_CreateChallengeDialog> {
+class _CreateChallengeDialogState
+    extends ConsumerState<_CreateChallengeDialog> {
   final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
   final _descriptionController = TextEditingController();
@@ -244,7 +259,8 @@ class _CreateChallengeDialogState extends ConsumerState<_CreateChallengeDialog> 
         borderRadius: BorderRadius.circular(CPRadius.xl),
         side: BorderSide(color: CPColors.line),
       ),
-      title: Text('Create Community Challenge', style: CPTextStyles.headlineSmall),
+      title:
+          Text('Create Community Challenge', style: CPTextStyles.headlineSmall),
       content: SizedBox(
         width: double.maxFinite,
         child: Form(
@@ -262,20 +278,25 @@ class _CreateChallengeDialogState extends ConsumerState<_CreateChallengeDialog> 
                 DropdownButtonFormField<String>(
                   value: _category,
                   decoration: const InputDecoration(labelText: 'Category'),
-                  items: CPCategories.challengeCategories.map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
+                  items: CPCategories.challengeCategories
+                      .map((c) => DropdownMenuItem(value: c, child: Text(c)))
+                      .toList(),
                   onChanged: (v) => setState(() => _category = v!),
                 ),
                 const SizedBox(height: CPSpacing.md),
                 DropdownButtonFormField<String>(
                   value: _difficulty,
                   decoration: const InputDecoration(labelText: 'Difficulty'),
-                  items: ['Easy', 'Medium', 'Hard'].map((d) => DropdownMenuItem(value: d, child: Text(d))).toList(),
+                  items: ['Easy', 'Medium', 'Hard']
+                      .map((d) => DropdownMenuItem(value: d, child: Text(d)))
+                      .toList(),
                   onChanged: (v) => setState(() => _difficulty = v!),
                 ),
                 const SizedBox(height: CPSpacing.md),
                 TextFormField(
                   controller: _flagController,
-                  decoration: const InputDecoration(labelText: 'Flag (e.g., CIPHER{...})'),
+                  decoration: const InputDecoration(
+                      labelText: 'Flag (e.g., CIPHER{...})'),
                   validator: (v) => v?.isEmpty ?? true ? 'Required' : null,
                 ),
                 const SizedBox(height: CPSpacing.md),
@@ -292,13 +313,15 @@ class _CreateChallengeDialogState extends ConsumerState<_CreateChallengeDialog> 
                   keyboardType: TextInputType.number,
                   onChanged: (v) => _points = int.tryParse(v) ?? 100,
                 ),
-],
+              ],
             ),
           ),
         ),
       ),
       actions: [
-        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+        TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel')),
         FilledButton(
           onPressed: _submit,
           child: const Text('Create'),
@@ -312,7 +335,8 @@ class _CreateChallengeDialogState extends ConsumerState<_CreateChallengeDialog> 
     Navigator.pop(context);
     // TODO: Implement actual API call
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Challenge created! (API not implemented yet)')),
+      const SnackBar(
+          content: Text('Challenge created! (API not implemented yet)')),
     );
   }
 }
@@ -342,7 +366,8 @@ class _EmptyState extends StatelessWidget {
             const SizedBox(height: CPSpacing.lg),
             Text(title, style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.sm),
-            Text(subtitle, style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
+            Text(subtitle,
+                style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
             if (action != null) ...[
               const SizedBox(height: CPSpacing.xl),
               action!,

@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
-final challengeDetailProvider = FutureProvider.family<CPChallenge, int>((ref, id) async {
+final challengeDetailProvider =
+    FutureProvider.family<CPChallenge, int>((ref, id) async {
   final client = ref.watch(apiClientProvider);
   final result = await client.getChallenge(id);
   return CPChallenge.fromJson(result);
@@ -50,7 +52,8 @@ class ChallengeDetailScreen extends ConsumerWidget {
           ],
         ),
         loading: () => _ChallengeDetailSkeleton(),
-        error: (e, _) => _ChallengeDetailError(error: e.toString(), challengeId: challengeId),
+        error: (e, _) => _ChallengeDetailError(
+            error: e.toString(), challengeId: challengeId),
       ),
     );
   }
@@ -107,19 +110,24 @@ class _ChallengeDetailAppBar extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
                 color: challenge.categoryColor.withOpacity(0.16),
-                border: Border.all(color: challenge.categoryColor.withOpacity(0.4)),
+                border:
+                    Border.all(color: challenge.categoryColor.withOpacity(0.4)),
                 borderRadius: BorderRadius.circular(CPRadius.pill),
               ),
               child: Text(
                 'lab/${challenge.category}',
-                style: CPTextStyles.labelSmall.copyWith(color: challenge.categoryColor),
+                style: CPTextStyles.labelSmall
+                    .copyWith(color: challenge.categoryColor),
               ),
             ),
             const SizedBox(height: 4),
             Text(
               challenge.title,
               style: CPTextStyles.headlineMedium.copyWith(
-                shadows: [const Shadow(color: Colors.black, blurRadius: 4, offset: Offset(0, 2))],
+                shadows: [
+                  const Shadow(
+                      color: Colors.black, blurRadius: 4, offset: Offset(0, 2))
+                ],
               ),
             ),
           ],
@@ -173,7 +181,8 @@ class _MetaChip extends StatelessWidget {
   final String label;
   final Color color;
 
-  const _MetaChip({required this.icon, required this.label, required this.color});
+  const _MetaChip(
+      {required this.icon, required this.label, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -233,8 +242,6 @@ class _ChallengeHints extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final client = ref.watch(apiClientProvider);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -269,10 +276,12 @@ class _ChallengeHints extends ConsumerWidget {
     );
   }
 
-  Future<void> _unlockHint(BuildContext context, WidgetRef ref, int number) async {
+  Future<void> _unlockHint(
+      BuildContext context, WidgetRef ref, int number) async {
     final client = ref.read(apiClientProvider);
     try {
-      final result = await client.unlockHint(challengeId: challenge.id, hintNumber: number);
+      final result = await client.unlockHint(
+          challengeId: challenge.id, hintNumber: number);
       final resp = CPHintUnlockResponse.fromJson(result);
       if (resp.success && resp.hint != null) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -356,7 +365,8 @@ class _ChallengeWalkthrough extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (challenge.solutionWalkthrough == null || challenge.solutionWalkthrough!.isEmpty) {
+    if (challenge.solutionWalkthrough == null ||
+        challenge.solutionWalkthrough!.isEmpty) {
       return const SizedBox.shrink();
     }
 
@@ -409,7 +419,8 @@ class _FlagSubmit extends ConsumerWidget {
                 children: [
                   Text(
                     'Format: CIPHER{...}',
-                    style: CPTextStyles.bodySmall.copyWith(color: CPColors.muted),
+                    style:
+                        CPTextStyles.bodySmall.copyWith(color: CPColors.muted),
                   ),
                   const SizedBox(height: CPSpacing.md),
                   TextFormField(
@@ -418,7 +429,8 @@ class _FlagSubmit extends ConsumerWidget {
                       hintText: 'Enter flag here',
                       prefixIcon: Icon(Icons.vpn_key),
                     ),
-                    validator: (v) => v == null || v.isEmpty ? 'Flag is required' : null,
+                    validator: (v) =>
+                        v == null || v.isEmpty ? 'Flag is required' : null,
                   ),
                   const SizedBox(height: CPSpacing.lg),
                   SizedBox(
@@ -435,16 +447,18 @@ class _FlagSubmit extends ConsumerWidget {
                           if (resp.success) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text('Correct! +${resp.pointsAwarded} pts'),
+                                content:
+                                    Text('Correct! +${resp.pointsAwarded} pts'),
                                 backgroundColor: CPColors.success,
                               ),
                             );
                             flagController.clear();
-                            ref.invalidate(challengeDetailProvider(challenge.id));
+                            ref.invalidate(
+                                challengeDetailProvider(challenge.id));
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text(resp.message ?? 'Incorrect flag'),
+                                content: Text(resp.message),
                                 backgroundColor: CPColors.danger,
                               ),
                             );
@@ -487,9 +501,15 @@ class _ChallengeDetailSkeleton extends StatelessWidget {
                 children: [
                   Container(height: 20, width: 200, color: CPColors.bg800),
                   const SizedBox(height: 16),
-                  Container(height: 24, width: double.infinity, color: CPColors.bg800),
+                  Container(
+                      height: 24,
+                      width: double.infinity,
+                      color: CPColors.bg800),
                   const SizedBox(height: 24),
-                  Container(height: 80, width: double.infinity, color: CPColors.bg800),
+                  Container(
+                      height: 80,
+                      width: double.infinity,
+                      color: CPColors.bg800),
                 ],
               ),
             ),
@@ -518,9 +538,11 @@ class _ChallengeDetailError extends StatelessWidget {
             children: [
               const Icon(Icons.error_outline, size: 48, color: CPColors.danger),
               const SizedBox(height: CPSpacing.md),
-              Text('Failed to load challenge', style: CPTextStyles.headlineSmall),
+              Text('Failed to load challenge',
+                  style: CPTextStyles.headlineSmall),
               const SizedBox(height: CPSpacing.xs),
-              Text(error, style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
+              Text(error,
+                  style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
               const SizedBox(height: CPSpacing.lg),
               FilledButton(
                 onPressed: () => context.go('/challenges/$challengeId'),

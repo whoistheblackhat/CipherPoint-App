@@ -66,7 +66,8 @@ class CPChallenge with _$CPChallenge {
     bool? solvedByCurrentUser,
   }) = _CPChallenge;
 
-  factory CPChallenge.fromJson(Map<String, dynamic> json) => _$CPChallengeFromJson(json);
+  factory CPChallenge.fromJson(Map<String, dynamic> json) =>
+      _$CPChallengeFromJson(json);
 }
 
 @freezed
@@ -83,7 +84,8 @@ class CPLeaderboardEntry with _$CPLeaderboardEntry {
     bool? isCurrentUser,
   }) = _CPLeaderboardEntry;
 
-  factory CPLeaderboardEntry.fromJson(Map<String, dynamic> json) => _$CPLeaderboardEntryFromJson(json);
+  factory CPLeaderboardEntry.fromJson(Map<String, dynamic> json) =>
+      _$CPLeaderboardEntryFromJson(json);
 }
 
 @freezed
@@ -93,7 +95,8 @@ class CPLeaderboardResponse with _$CPLeaderboardResponse {
     CPLeaderboardEntry? currentUser,
   }) = _CPLeaderboardResponse;
 
-  factory CPLeaderboardResponse.fromJson(Map<String, dynamic> json) => _$CPLeaderboardResponseFromJson(json);
+  factory CPLeaderboardResponse.fromJson(Map<String, dynamic> json) =>
+      _$CPLeaderboardResponseFromJson(json);
 }
 
 @freezed
@@ -108,7 +111,8 @@ class CPFlagSubmitResponse with _$CPFlagSubmitResponse {
     List<String>? newBadges,
   }) = _CPFlagSubmitResponse;
 
-  factory CPFlagSubmitResponse.fromJson(Map<String, dynamic> json) => _$CPFlagSubmitResponseFromJson(json);
+  factory CPFlagSubmitResponse.fromJson(Map<String, dynamic> json) =>
+      _$CPFlagSubmitResponseFromJson(json);
 }
 
 @freezed
@@ -121,7 +125,8 @@ class CPHintUnlockResponse with _$CPHintUnlockResponse {
     String? message,
   }) = _CPHintUnlockResponse;
 
-  factory CPHintUnlockResponse.fromJson(Map<String, dynamic> json) => _$CPHintUnlockResponseFromJson(json);
+  factory CPHintUnlockResponse.fromJson(Map<String, dynamic> json) =>
+      _$CPHintUnlockResponseFromJson(json);
 }
 
 @freezed
@@ -140,7 +145,8 @@ class CPIntelArticle with _$CPIntelArticle {
     bool? isPublished,
   }) = _CPIntelArticle;
 
-  factory CPIntelArticle.fromJson(Map<String, dynamic> json) => _$CPIntelArticleFromJson(json);
+  factory CPIntelArticle.fromJson(Map<String, dynamic> json) =>
+      _$CPIntelArticleFromJson(json);
 }
 
 @freezed
@@ -158,7 +164,8 @@ class CPComment with _$CPComment {
     List<CPComment>? replies,
   }) = _CPComment;
 
-  factory CPComment.fromJson(Map<String, dynamic> json) => _$CPCommentFromJson(json);
+  factory CPComment.fromJson(Map<String, dynamic> json) =>
+      _$CPCommentFromJson(json);
 }
 
 @freezed
@@ -169,7 +176,8 @@ class CPAuthResponse with _$CPAuthResponse {
     String? refreshToken,
   }) = _CPAuthResponse;
 
-  factory CPAuthResponse.fromJson(Map<String, dynamic> json) => _$CPAuthResponseFromJson(json);
+  factory CPAuthResponse.fromJson(Map<String, dynamic> json) =>
+      _$CPAuthResponseFromJson(json);
 }
 
 @freezed
@@ -184,7 +192,8 @@ class CPNotification with _$CPNotification {
     Map<String, dynamic>? data,
   }) = _CPNotification;
 
-  factory CPNotification.fromJson(Map<String, dynamic> json) => _$CPNotificationFromJson(json);
+  factory CPNotification.fromJson(Map<String, dynamic> json) =>
+      _$CPNotificationFromJson(json);
 }
 
 @freezed
@@ -201,7 +210,8 @@ class CPMedia with _$CPMedia {
     String? createdAt,
   }) = _CPMedia;
 
-  factory CPMedia.fromJson(Map<String, dynamic> json) => _$CPMediaFromJson(json);
+  factory CPMedia.fromJson(Map<String, dynamic> json) =>
+      _$CPMediaFromJson(json);
 }
 
 @freezed
@@ -214,7 +224,8 @@ class CPStats with _$CPStats {
     required int flaggedUsers,
   }) = _CPStats;
 
-  factory CPStats.fromJson(Map<String, dynamic> json) => _$CPStatsFromJson(json);
+  factory CPStats.fromJson(Map<String, dynamic> json) =>
+      _$CPStatsFromJson(json);
 }
 
 // Category constants matching website
@@ -257,23 +268,32 @@ class CPCategories {
 }
 
 extension CPChallengeX on CPChallenge {
-  Color get categoryColor => CPCategories.categoryColors[category] ?? CPColors.muted;
+  Color get categoryColor =>
+      CPCategories.categoryColors[category] ?? CPColors.muted;
 
   String get difficultyLabel {
     switch (difficulty.toLowerCase()) {
-      case 'easy': return 'Easy';
-      case 'medium': return 'Medium';
-      case 'hard': return 'Hard';
-      default: return difficulty;
+      case 'easy':
+        return 'Easy';
+      case 'medium':
+        return 'Medium';
+      case 'hard':
+        return 'Hard';
+      default:
+        return difficulty;
     }
   }
 
   Color get difficultyColor {
     switch (difficulty.toLowerCase()) {
-      case 'easy': return CPColors.success;
-      case 'medium': return CPColors.amber;
-      case 'hard': return CPColors.danger;
-      default: return CPColors.muted;
+      case 'easy':
+        return CPColors.success;
+      case 'medium':
+        return CPColors.amber;
+      case 'hard':
+        return CPColors.danger;
+      default:
+        return CPColors.muted;
     }
   }
 

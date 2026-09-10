@@ -3,21 +3,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
+import '../auth/auth_provider.dart';
 import '../../shared/models/models.dart';
 
 final dashboardDataProvider = FutureProvider<Map<String, dynamic>>((ref) async {
   final client = ref.watch(apiClientProvider);
-  final [challenges, leaderboard, intel] = await Future.wait([
-    client.getChallenges(limit: 6),
-    client.getLeaderboard(limit: 5),
-    client.getIntelArticles(limit: 4),
-  ]);
+  final challengesResult = await client.getChallenges(limit: 6);
+  final leaderboardResult = await client.getLeaderboard(limit: 5);
+  final intelResult = await client.getIntelArticles(limit: 4);
   return {
-    'challenges': challenges.map((e) => CPChallenge.fromJson(e)).toList(),
-    'leaderboard': (leaderboard['users'] as List).map((e) => CPLeaderboardEntry.fromJson(e)).toList(),
-    'intel': intel.map((e) => CPIntelArticle.fromJson(e)).toList(),
+    'challenges': challengesResult.map((e) => CPChallenge.fromJson(e)).toList(),
+    'leaderboard': (leaderboardResult['users'] as List)
+        .map((e) => CPLeaderboardEntry.fromJson(e))
+        .toList(),
+    'intel': intelResult.map((e) => CPIntelArticle.fromJson(e)).toList(),
   };
 });
 
@@ -110,7 +112,8 @@ class _DashboardAppBar extends ConsumerWidget implements PreferredSizeWidget {
           child: CircleAvatar(
             radius: 16,
             backgroundColor: CPColors.bg800,
-            backgroundImage: user?.avatarUrl != null ? NetworkImage(user!.avatarUrl!) : null,
+            backgroundImage:
+                user?.avatarUrl != null ? NetworkImage(user!.avatarUrl!) : null,
             child: user?.avatarUrl == null
                 ? const Icon(Icons.person, size: 18, color: CPColors.muted)
                 : null,
@@ -159,7 +162,10 @@ class _DashboardContent extends StatelessWidget {
               separatorBuilder: (_, __) => const SizedBox(width: CPSpacing.md),
               itemBuilder: (context, index) {
                 final c = challenges[index];
-                return _ChallengeCard(challenge: c, onTap: () => context.push('/challenges/${c.id}'));
+                return _ChallengeCard(
+                  challenge: c,
+                  onTap: () => context.push('/challenges/${c.id}'),
+                );
               },
             ),
           ),
@@ -200,10 +206,12 @@ class _DashboardContent extends StatelessWidget {
                     child: const Text('View all'),
                   ),
                   child: Column(
-                    children: intel.map((article) => _IntelRow(
-                      article: article,
-                      onTap: () => context.push('/intel/${article.id}'),
-                    )).toList(),
+                    children: intel
+                        .map((article) => _IntelRow(
+                              article: article,
+                              onTap: () => context.push('/intel/${article.id}'),
+                            ))
+                        .toList(),
                   ),
                 ),
               ),
@@ -285,15 +293,17 @@ class _ChallengeCard extends StatelessWidget {
           children: [
             if (challenge.telegramFileId != null)
               ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(CPRadius.lg)),
+                borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(CPRadius.lg)),
                 child: AspectRatio(
-                  aspectRatio: 16/9,
+                  aspectRatio: 16 / 9,
                   child: Image.network(
                     'https://cipherpoint.linkpc.net/api/media/${challenge.telegramFileId}',
                     fit: BoxFit.cover,
                     errorBuilder: (_, __, ___) => Container(
                       color: CPColors.bg800,
-                      child: const Center(child: Icon(Icons.image, color: CPColors.muted)),
+                      child: const Center(
+                          child: Icon(Icons.image, color: CPColors.muted)),
                     ),
                   ),
                 ),
@@ -306,28 +316,35 @@ class _ChallengeCard extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: challenge.categoryColor.withOpacity(0.12),
-                          border: Border.all(color: challenge.categoryColor.withOpacity(0.3)),
+                          border: Border.all(
+                              color: challenge.categoryColor.withOpacity(0.3)),
                           borderRadius: BorderRadius.circular(CPRadius.pill),
                         ),
                         child: Text(
                           'lab/${challenge.category}',
-                          style: CPTextStyles.labelSmall.copyWith(color: challenge.categoryColor),
+                          style: CPTextStyles.labelSmall
+                              .copyWith(color: challenge.categoryColor),
                         ),
                       ),
                       const Spacer(),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: challenge.difficultyColor.withOpacity(0.12),
-                          border: Border.all(color: challenge.difficultyColor.withOpacity(0.3)),
+                          border: Border.all(
+                              color:
+                                  challenge.difficultyColor.withOpacity(0.3)),
                           borderRadius: BorderRadius.circular(CPRadius.pill),
                         ),
                         child: Text(
                           challenge.difficultyLabel,
-                          style: CPTextStyles.labelSmall.copyWith(color: challenge.difficultyColor),
+                          style: CPTextStyles.labelSmall
+                              .copyWith(color: challenge.difficultyColor),
                         ),
                       ),
                     ],
@@ -349,12 +366,15 @@ class _ChallengeCard extends StatelessWidget {
                         style: CPTextStyles.bodySmall,
                       ),
                       const SizedBox(width: 12),
-                      if (challenge.solvedCount != null && challenge.solvedCount! > 0) ...[
-                        Icon(Icons.check_circle, size: 14, color: CPColors.success),
+                      if (challenge.solvedCount != null &&
+                          challenge.solvedCount! > 0) ...[
+                        Icon(Icons.check_circle,
+                            size: 14, color: CPColors.success),
                         const SizedBox(width: 4),
                         Text(
                           '${challenge.solvedCount} solves',
-                          style: CPTextStyles.bodySmall.copyWith(color: CPColors.success),
+                          style: CPTextStyles.bodySmall
+                              .copyWith(color: CPColors.success),
                         ),
                       ],
                     ],
@@ -390,9 +410,13 @@ class _LeaderboardRow extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 4),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: isCurrentUser ? CPColors.primary.withOpacity(0.08) : Colors.transparent,
+        color: isCurrentUser
+            ? CPColors.primary.withOpacity(0.08)
+            : Colors.transparent,
         borderRadius: BorderRadius.circular(CPRadius.md),
-        border: isCurrentUser ? Border.all(color: CPColors.primary.withOpacity(0.3)) : null,
+        border: isCurrentUser
+            ? Border.all(color: CPColors.primary.withOpacity(0.3))
+            : null,
       ),
       child: Row(
         children: [
@@ -417,17 +441,23 @@ class _LeaderboardRow extends StatelessWidget {
                     if (isCurrentUser) ...[
                       const SizedBox(width: 6),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 1),
                         decoration: BoxDecoration(
                           color: CPColors.primary.withOpacity(0.16),
                           borderRadius: BorderRadius.circular(CPRadius.pill),
                         ),
-                        child: Text('You', style: CPTextStyles.labelSmall.copyWith(color: CPColors.primary)),
+                        child: Text(
+                          'You',
+                          style: CPTextStyles.labelSmall
+                              .copyWith(color: CPColors.primary),
+                        ),
                       ),
                     ],
                   ],
                 ),
-                Text('$solvedCount solves · $rankPoints pts', style: CPTextStyles.bodySmall),
+                Text('$solvedCount solves · $rankPoints pts',
+                    style: CPTextStyles.bodySmall),
               ],
             ),
           ),
@@ -469,9 +499,19 @@ class _IntelRow extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(article.title, style: CPTextStyles.titleSmall, maxLines: 1, overflow: TextOverflow.ellipsis),
+                  Text(
+                    article.title,
+                    style: CPTextStyles.titleSmall,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   if (article.summary != null)
-                    Text(article.summary!, style: CPTextStyles.bodySmall, maxLines: 1, overflow: TextOverflow.ellipsis),
+                    Text(
+                      article.summary!,
+                      style: CPTextStyles.bodySmall,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                 ],
               ),
             ),
@@ -536,7 +576,8 @@ class _DashboardError extends StatelessWidget {
             const SizedBox(height: CPSpacing.md),
             Text('Failed to load dashboard', style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.xs),
-            Text(error, style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
+            Text(error,
+                style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
             const SizedBox(height: CPSpacing.lg),
             FilledButton(
               onPressed: () => context.go('/'),

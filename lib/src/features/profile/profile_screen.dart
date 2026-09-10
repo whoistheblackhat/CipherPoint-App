@@ -3,12 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 import '../auth/auth_provider.dart';
 
-final profileProvider = FutureProvider.family<Map<String, dynamic>, int>((ref, userId) async {
+final profileProvider =
+    FutureProvider.family<Map<String, dynamic>, int>((ref, userId) async {
   final client = ref.watch(apiClientProvider);
   return client.getProfile(userId);
 });
@@ -23,7 +25,12 @@ class ProfileScreen extends ConsumerWidget {
 
     if (user == null) {
       return Scaffold(
-        body: Center(child: FilledButton(onPressed: () => context.go('/login'), child: const Text('Login'))),
+        body: Center(
+          child: FilledButton(
+            onPressed: () => context.go('/login'),
+            child: const Text('Login'),
+          ),
+        ),
       );
     }
 
@@ -56,7 +63,10 @@ class ProfileScreen extends ConsumerWidget {
           ],
         ),
         loading: () => _ProfileSkeleton(),
-        error: (e, _) => _ErrorState(error: e.toString(), onRetry: () => ref.invalidate(profileProvider)),
+        error: (e, _) => _ErrorState(
+          error: e.toString(),
+          onRetry: () => ref.invalidate(profileProvider),
+        ),
       ),
     );
   }
@@ -81,7 +91,8 @@ class _ProfileHeader extends StatelessWidget {
           CircleAvatar(
             radius: 50,
             backgroundColor: CPColors.bg800,
-            backgroundImage: user.avatarUrl != null ? NetworkImage(user.avatarUrl!) : null,
+            backgroundImage:
+                user.avatarUrl != null ? NetworkImage(user.avatarUrl!) : null,
             child: user.avatarUrl == null
                 ? const Icon(Icons.person, size: 50, color: CPColors.muted)
                 : null,
@@ -94,42 +105,76 @@ class _ProfileHeader extends StatelessWidget {
             children: [
               if (user.isAdmin == true)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
                     color: CPColors.purple.withOpacity(0.16),
                     border: Border.all(color: CPColors.purple.withOpacity(0.4)),
                     borderRadius: BorderRadius.circular(CPRadius.pill),
                   ),
-                  child: Text('Admin', style: CPTextStyles.labelSmall.copyWith(color: CPColors.purple)),
+                  child: Text(
+                    'Admin',
+                    style: CPTextStyles.labelSmall
+                        .copyWith(color: CPColors.purple),
+                  ),
                 ),
               const SizedBox(width: CPSpacing.sm),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: CPColors.primary.withOpacity(0.16),
-                  border: Border.all(color: CPColors.primary.withOpacity(0.4)),
+                  border: Border.all(
+                    color: CPColors.primary.withOpacity(0.4),
+                  ),
                   borderRadius: BorderRadius.circular(CPRadius.pill),
                 ),
-                child: Text('Analyst', style: CPTextStyles.labelSmall.copyWith(color: CPColors.primary)),
+                child: Text(
+                  'Analyst',
+                  style:
+                      CPTextStyles.labelSmall.copyWith(color: CPColors.primary),
+                ),
               ),
             ],
           ),
           const SizedBox(height: CPSpacing.md),
           if (user.bio != null && user.bio!.isNotEmpty)
-            Text(user.bio!, style: CPTextStyles.bodyMedium, textAlign: TextAlign.center)
+            Text(
+              user.bio!,
+              style: CPTextStyles.bodyMedium,
+              textAlign: TextAlign.center,
+            )
           else
-            Text('No bio yet', style: CPTextStyles.bodyMedium.copyWith(color: CPColors.muted)),
+            Text(
+              'No bio yet',
+              style: CPTextStyles.bodyMedium.copyWith(color: CPColors.muted),
+            ),
           const SizedBox(height: CPSpacing.lg),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _StatColumn(label: 'Rank', value: '#${profile['rank'] ?? '?'}', color: CPColors.gold),
+              _StatColumn(
+                label: 'Rank',
+                value: '#${profile['rank'] ?? '?'}',
+                color: CPColors.gold,
+              ),
               const SizedBox(width: CPSpacing.xl),
-              _StatColumn(label: 'Solves', value: '${user.solvedCount ?? 0}', color: CPColors.success),
+              _StatColumn(
+                label: 'Solves',
+                value: '${user.solvedCount ?? 0}',
+                color: CPColors.success,
+              ),
               const SizedBox(width: CPSpacing.xl),
-              _StatColumn(label: 'Points', value: '${user.rankPoints ?? 0}', color: CPColors.primary),
+              _StatColumn(
+                label: 'Points',
+                value: '${user.rankPoints ?? 0}',
+                color: CPColors.primary,
+              ),
               const SizedBox(width: CPSpacing.xl),
-              _StatColumn(label: 'Coins', value: '${user.coins ?? 0}', color: CPColors.amber),
+              _StatColumn(
+                  label: 'Coins',
+                  value: '${user.coins ?? 0}',
+                  color: CPColors.amber),
             ],
           ),
         ],
@@ -143,7 +188,8 @@ class _StatColumn extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatColumn({required this.label, required this.value, required this.color});
+  const _StatColumn(
+      {required this.label, required this.value, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -178,10 +224,30 @@ class _ProfileStats extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               childAspectRatio: 2,
               children: [
-                _StatItem(icon: Icons.local_fire_department, label: 'Streak', value: '${profile['daily_streak'] ?? 0} days', color: CPColors.danger),
-                _StatItem(icon: Icons.verified, label: 'Reports Approved', value: '${profile['reports_approved'] ?? 0}', color: CPColors.success),
-                _StatItem(icon: Icons.lock_open, label: 'Hints Unlocked', value: '${profile['hints_unlocked'] ?? 0}', color: CPColors.amber),
-                _StatItem(icon: Icons.visibility, label: 'Profile Views', value: '${profile['profile_views'] ?? 0}', color: CPColors.teal),
+                _StatItem(
+                  icon: Icons.local_fire_department,
+                  label: 'Streak',
+                  value: '${profile['daily_streak'] ?? 0} days',
+                  color: CPColors.danger,
+                ),
+                _StatItem(
+                  icon: Icons.verified,
+                  label: 'Reports Approved',
+                  value: '${profile['reports_approved'] ?? 0}',
+                  color: CPColors.success,
+                ),
+                _StatItem(
+                  icon: Icons.lock_open,
+                  label: 'Hints Unlocked',
+                  value: '${profile['hints_unlocked'] ?? 0}',
+                  color: CPColors.amber,
+                ),
+                _StatItem(
+                  icon: Icons.visibility,
+                  label: 'Profile Views',
+                  value: '${profile['profile_views'] ?? 0}',
+                  color: CPColors.teal,
+                ),
               ],
             ),
           ],
@@ -197,7 +263,12 @@ class _StatItem extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatItem({required this.icon, required this.label, required this.value, required this.color});
+  const _StatItem({
+    required this.icon,
+    required this.label,
+    required this.value,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -224,7 +295,8 @@ class _StatItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(label, style: CPTextStyles.bodySmall),
-              Text(value, style: CPTextStyles.titleMedium.copyWith(color: color)),
+              Text(value,
+                  style: CPTextStyles.titleMedium.copyWith(color: color)),
             ],
           ),
         ],
@@ -254,12 +326,15 @@ class _ProfileBadges extends StatelessWidget {
         Wrap(
           spacing: CPSpacing.sm,
           runSpacing: CPSpacing.sm,
-          children: badges.map((badge) => Chip(
-            label: Text(badge, style: CPTextStyles.labelSmall),
-            avatar: Icon(_getBadgeIcon(badge), size: 16, color: CPColors.primary),
-            backgroundColor: CPColors.primary.withOpacity(0.12),
-            side: BorderSide(color: CPColors.primary.withOpacity(0.3)),
-          )).toList(),
+          children: badges
+              .map((badge) => Chip(
+                    label: Text(badge, style: CPTextStyles.labelSmall),
+                    avatar: Icon(_getBadgeIcon(badge),
+                        size: 16, color: CPColors.primary),
+                    backgroundColor: CPColors.primary.withOpacity(0.12),
+                    side: BorderSide(color: CPColors.primary.withOpacity(0.3)),
+                  ))
+              .toList(),
         ),
       ],
     );
@@ -267,11 +342,16 @@ class _ProfileBadges extends StatelessWidget {
 
   IconData _getBadgeIcon(String badge) {
     switch (badge) {
-      case 'Rookie': return Icons.emoji_events;
-      case 'Resolver': return Icons.military_tech;
-      case 'Investigator': return Icons.search;
-      case 'Wealthy': return Icons.monetization_on;
-      default: return Icons.star;
+      case 'Rookie':
+        return Icons.emoji_events;
+      case 'Resolver':
+        return Icons.military_tech;
+      case 'Investigator':
+        return Icons.search;
+      case 'Wealthy':
+        return Icons.monetization_on;
+      default:
+        return Icons.star;
     }
   }
 }
@@ -289,7 +369,8 @@ class _ProfileActions extends StatelessWidget {
           title: Text('Edit Profile', style: CPTextStyles.bodyMedium),
           trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
           onTap: () => context.push('/settings'),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(CPRadius.md)),
           tileColor: CPColors.card,
         ),
         const SizedBox(height: CPSpacing.sm),
@@ -298,7 +379,8 @@ class _ProfileActions extends StatelessWidget {
           title: Text('Solve History', style: CPTextStyles.bodyMedium),
           trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
           onTap: () {},
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(CPRadius.md)),
           tileColor: CPColors.card,
         ),
         const SizedBox(height: CPSpacing.sm),
@@ -307,7 +389,8 @@ class _ProfileActions extends StatelessWidget {
           title: Text('Bookmarked Challenges', style: CPTextStyles.bodyMedium),
           trailing: const Icon(Icons.chevron_right, color: CPColors.muted),
           onTap: () {},
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(CPRadius.md)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(CPRadius.md)),
           tileColor: CPColors.card,
         ),
       ],
@@ -326,13 +409,29 @@ class _ProfileSkeleton extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                Container(width: 100, height: 100, decoration: BoxDecoration(color: CPColors.bg800, shape: BoxShape.circle)),
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: CPColors.bg800,
+                    shape: BoxShape.circle,
+                  ),
+                ),
                 const SizedBox(height: 16),
                 Container(height: 24, width: 150, color: CPColors.bg800),
                 const SizedBox(height: 24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(4, (i) => Expanded(child: Container(height: 60, color: CPColors.bg800, margin: EdgeInsets.symmetric(horizontal: 8)))),
+                  children: List.generate(
+                    4,
+                    (i) => Expanded(
+                      child: Container(
+                        height: 60,
+                        color: CPColors.bg800,
+                        margin: EdgeInsets.symmetric(horizontal: 8),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -361,7 +460,8 @@ class _ErrorState extends StatelessWidget {
             const SizedBox(height: CPSpacing.md),
             Text('Failed to load profile', style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.xs),
-            Text(error, style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
+            Text(error,
+                style: CPTextStyles.bodySmall, textAlign: TextAlign.center),
             const SizedBox(height: CPSpacing.lg),
             FilledButton(onPressed: onRetry, child: const Text('Retry')),
           ],

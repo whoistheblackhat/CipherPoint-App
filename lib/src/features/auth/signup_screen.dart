@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/cipherpoint_theme.dart';
-import '../../auth/auth_provider.dart';
+import 'auth_provider.dart';
 
 class SignupScreen extends ConsumerStatefulWidget {
   const SignupScreen({super.key});
@@ -54,7 +54,8 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                       borderRadius: BorderRadius.circular(CPRadius.xl),
                       border: Border.all(color: CPColors.lineStrong),
                     ),
-                    child: const Icon(Icons.person, color: CPColors.text, size: 40),
+                    child: const Icon(Icons.person,
+                        color: CPColors.text, size: 40),
                   ),
                   const SizedBox(height: CPSpacing.xl),
                   Text('Join CipherPoint', style: CPTextStyles.displaySmall),
@@ -80,8 +81,11 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                           textInputAction: TextInputAction.next,
                           validator: (v) {
                             if (v?.isEmpty ?? true) return 'Username required';
-                            if (v!.length < 3 || v.length > 20) return '3-20 characters';
-                            if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(v)) return 'Alphanumeric only';
+                            if (v!.length < 3 || v.length > 20)
+                              return '3-20 characters';
+                            if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(v)) {
+                              return 'Alphanumeric only';
+                            }
                             return null;
                           },
                         ),
@@ -96,7 +100,8 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                           textInputAction: TextInputAction.next,
                           validator: (v) {
                             if (v?.isEmpty ?? true) return 'Email required';
-                            if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(v!)) {
+                            if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                                .hasMatch(v!)) {
                               return 'Invalid email';
                             }
                             return null;
@@ -109,8 +114,13 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                             labelText: 'Password',
                             prefixIcon: const Icon(Icons.lock_outline),
                             suffixIcon: IconButton(
-                              icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
-                              onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
+                              icon: Icon(
+                                _obscurePassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                              ),
+                              onPressed: () => setState(
+                                  () => _obscurePassword = !_obscurePassword),
                             ),
                             helperText: 'Min 8 characters',
                           ),
@@ -129,14 +139,19 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                             labelText: 'Confirm Password',
                             prefixIcon: const Icon(Icons.lock_outline),
                             suffixIcon: IconButton(
-                              icon: Icon(_obscureConfirm ? Icons.visibility : Icons.visibility_off),
-                              onPressed: () => setState(() => _obscureConfirm = !_obscureConfirm),
+                              icon: Icon(_obscureConfirm
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
+                              onPressed: () => setState(
+                                  () => _obscureConfirm = !_obscureConfirm),
                             ),
                           ),
                           obscureText: _obscureConfirm,
                           textInputAction: TextInputAction.done,
                           onFieldSubmitted: (_) => _submit(),
-                          validator: (v) => v == _passwordController.text ? null : 'Passwords must match',
+                          validator: (v) => v == _passwordController.text
+                              ? null
+                              : 'Passwords must match',
                         ),
                         const SizedBox(height: CPSpacing.lg),
                         // Terms checkbox
@@ -145,13 +160,15 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                           children: [
                             Checkbox(
                               value: _agreeTerms,
-                              onChanged: (v) => setState(() => _agreeTerms = v ?? false),
+                              onChanged: (v) =>
+                                  setState(() => _agreeTerms = v ?? false),
                               activeColor: CPColors.primary,
                               checkColor: const Color(0xFF07111D),
                             ),
                             Expanded(
                               child: GestureDetector(
-                                onTap: () => setState(() => _agreeTerms = !_agreeTerms),
+                                onTap: () =>
+                                    setState(() => _agreeTerms = !_agreeTerms),
                                 child: RichText(
                                   text: TextSpan(
                                     style: CPTextStyles.bodySmall,
@@ -159,12 +176,16 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                                       const TextSpan(text: 'I agree to the '),
                                       TextSpan(
                                         text: 'Terms of Service',
-                                        style: CPTextStyles.bodySmall.copyWith(color: CPColors.primary),
+                                        style: CPTextStyles.bodySmall.copyWith(
+                                          color: CPColors.primary,
+                                        ),
                                       ),
                                       const TextSpan(text: ' and '),
                                       TextSpan(
                                         text: 'Privacy Policy',
-                                        style: CPTextStyles.bodySmall.copyWith(color: CPColors.primary),
+                                        style: CPTextStyles.bodySmall.copyWith(
+                                          color: CPColors.primary,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -177,12 +198,16 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                         SizedBox(
                           width: double.infinity,
                           child: FilledButton(
-                            onPressed: _isLoading || !_agreeTerms ? null : _submit,
+                            onPressed:
+                                _isLoading || !_agreeTerms ? null : _submit,
                             child: _isLoading
                                 ? const SizedBox(
                                     height: 20,
                                     width: 20,
-                                    child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF07111D)),
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      color: Color(0xFF07111D),
+                                    ),
                                   )
                                 : const Text('Create Account'),
                           ),
@@ -195,7 +220,8 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Already have an account? ', style: CPTextStyles.bodyMedium),
+                      Text('Already have an account? ',
+                          style: CPTextStyles.bodyMedium),
                       TextButton(
                         onPressed: () => context.go('/login'),
                         child: Text('Sign In', style: CPTextStyles.labelLarge),
@@ -222,10 +248,10 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     setState(() => _isLoading = true);
 
     final success = await ref.read(authStateProvider.notifier).signup(
-      username: _usernameController.text.trim(),
-      email: _emailController.text.trim(),
-      password: _passwordController.text,
-    );
+          username: _usernameController.text.trim(),
+          email: _emailController.text.trim(),
+          password: _passwordController.text,
+        );
 
     setState(() => _isLoading = false);
 

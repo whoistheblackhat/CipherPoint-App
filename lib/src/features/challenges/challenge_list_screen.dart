@@ -3,11 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
-final challengesProvider = FutureProvider.family<List<CPChallenge>, Map<String, dynamic>>((ref, params) async {
+final challengesProvider =
+    FutureProvider.family<List<CPChallenge>, Map<String, dynamic>>(
+        (ref, params) async {
   final client = ref.watch(apiClientProvider);
   final result = await client.getChallenges(
     category: params['category'],
@@ -23,7 +26,8 @@ class ChallengeListScreen extends ConsumerStatefulWidget {
   const ChallengeListScreen({super.key});
 
   @override
-  ConsumerState<ChallengeListScreen> createState() => _ChallengeListScreenState();
+  ConsumerState<ChallengeListScreen> createState() =>
+      _ChallengeListScreenState();
 }
 
 class _ChallengeListScreenState extends ConsumerState<ChallengeListScreen> {
@@ -49,7 +53,8 @@ class _ChallengeListScreenState extends ConsumerState<ChallengeListScreen> {
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 200) {
+    if (_scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent - 200) {
       _loadMore();
     }
   }
@@ -127,19 +132,22 @@ class _ChallengeListScreenState extends ConsumerState<ChallengeListScreen> {
               separatorBuilder: (_, __) => const SizedBox(width: CPSpacing.sm),
               itemBuilder: (context, index) {
                 final cat = categories[index];
-                final isSelected = _selectedCategory == cat || (_selectedCategory == null && cat == 'All');
+                final isSelected = _selectedCategory == cat ||
+                    (_selectedCategory == null && cat == 'All');
                 return FilterChip(
                   label: Text(cat),
                   selected: isSelected,
                   onSelected: (selected) {
                     setState(() {
-                      _selectedCategory = selected ? (cat == 'All' ? null : cat) : null;
+                      _selectedCategory =
+                          selected ? (cat == 'All' ? null : cat) : null;
                       _refresh();
                     });
                   },
                   selectedColor: CPColors.primary.withOpacity(0.16),
                   checkmarkColor: CPColors.primary,
-                  side: BorderSide(color: isSelected ? CPColors.primary : CPColors.line),
+                  side: BorderSide(
+                      color: isSelected ? CPColors.primary : CPColors.line),
                 );
               },
             ),
@@ -154,7 +162,8 @@ class _ChallengeListScreenState extends ConsumerState<ChallengeListScreen> {
               separatorBuilder: (_, __) => const SizedBox(width: CPSpacing.sm),
               itemBuilder: (context, index) {
                 final diff = difficulties[index];
-                final isSelected = _selectedDifficulty == diff || (_selectedDifficulty == null && diff == 'All');
+                final isSelected = _selectedDifficulty == diff ||
+                    (_selectedDifficulty == null && diff == 'All');
                 Color color = CPColors.muted;
                 if (diff == 'Easy') color = CPColors.success;
                 if (diff == 'Medium') color = CPColors.amber;
@@ -164,14 +173,16 @@ class _ChallengeListScreenState extends ConsumerState<ChallengeListScreen> {
                   selected: isSelected,
                   onSelected: (selected) {
                     setState(() {
-                      _selectedDifficulty = selected ? (diff == 'All' ? null : diff) : null;
+                      _selectedDifficulty =
+                          selected ? (diff == 'All' ? null : diff) : null;
                       _refresh();
                     });
                   },
                   selectedColor: color.withOpacity(0.16),
                   checkmarkColor: color,
                   side: BorderSide(color: isSelected ? color : CPColors.line),
-                  labelStyle: TextStyle(color: isSelected ? color : CPColors.text),
+                  labelStyle:
+                      TextStyle(color: isSelected ? color : CPColors.text),
                 );
               },
             ),
@@ -229,7 +240,8 @@ class _ChallengeListScreenState extends ConsumerState<ChallengeListScreen> {
                   icon: Icons.error_outline,
                   title: 'Failed to load challenges',
                   subtitle: e.toString(),
-                  action: TextButton(onPressed: _refresh, child: const Text('Retry')),
+                  action: TextButton(
+                      onPressed: _refresh, child: const Text('Retry')),
                 ),
               ),
             ),
@@ -287,7 +299,8 @@ class _ChallengeListItem extends StatelessWidget {
                       fit: BoxFit.cover,
                       errorBuilder: (_, __, ___) => Container(
                         color: CPColors.bg800,
-                        child: const Center(child: Icon(Icons.image, color: CPColors.muted)),
+                        child: const Center(
+                            child: Icon(Icons.image, color: CPColors.muted)),
                       ),
                     ),
                   ),
@@ -301,28 +314,37 @@ class _ChallengeListItem extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
                             color: challenge.categoryColor.withOpacity(0.12),
-                            border: Border.all(color: challenge.categoryColor.withOpacity(0.3)),
+                            border: Border.all(
+                                color:
+                                    challenge.categoryColor.withOpacity(0.3)),
                             borderRadius: BorderRadius.circular(CPRadius.pill),
                           ),
                           child: Text(
                             'lab/${challenge.category}',
-                            style: CPTextStyles.labelSmall.copyWith(color: challenge.categoryColor),
+                            style: CPTextStyles.labelSmall
+                                .copyWith(color: challenge.categoryColor),
                           ),
                         ),
                         const SizedBox(width: CPSpacing.sm),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
                             color: challenge.difficultyColor.withOpacity(0.12),
-                            border: Border.all(color: challenge.difficultyColor.withOpacity(0.3)),
+                            border: Border.all(
+                                color:
+                                    challenge.difficultyColor.withOpacity(0.3)),
                             borderRadius: BorderRadius.circular(CPRadius.pill),
                           ),
                           child: Text(
                             challenge.difficultyLabel,
-                            style: CPTextStyles.labelSmall.copyWith(color: challenge.difficultyColor),
+                            style: CPTextStyles.labelSmall.copyWith(
+                              color: challenge.difficultyColor,
+                            ),
                           ),
                         ),
                       ],
@@ -339,14 +361,18 @@ class _ChallengeListItem extends StatelessWidget {
                       children: [
                         Icon(Icons.flag, size: 14, color: CPColors.muted),
                         const SizedBox(width: 4),
-                        Text('${challenge.pointsReward ?? 0} pts', style: CPTextStyles.bodySmall),
+                        Text('${challenge.pointsReward ?? 0} pts',
+                            style: CPTextStyles.bodySmall),
                         const SizedBox(width: 12),
-                        if (challenge.solvedCount != null && challenge.solvedCount! > 0) ...[
-                          Icon(Icons.check_circle, size: 14, color: CPColors.success),
+                        if (challenge.solvedCount != null &&
+                            challenge.solvedCount! > 0) ...[
+                          Icon(Icons.check_circle,
+                              size: 14, color: CPColors.success),
                           const SizedBox(width: 4),
                           Text(
                             '${challenge.solvedCount} solves',
-                            style: CPTextStyles.bodySmall.copyWith(color: CPColors.success),
+                            style: CPTextStyles.bodySmall
+                                .copyWith(color: CPColors.success),
                           ),
                         ],
                       ],
@@ -383,7 +409,10 @@ class _ChallengeSkeleton extends StatelessWidget {
                   children: [
                     Container(height: 16, width: 80, color: CPColors.bg800),
                     const SizedBox(height: 8),
-                    Container(height: 20, width: double.infinity, color: CPColors.bg800),
+                    Container(
+                        height: 20,
+                        width: double.infinity,
+                        color: CPColors.bg800),
                     const SizedBox(height: 8),
                     Container(height: 14, width: 120, color: CPColors.bg800),
                   ],
@@ -428,11 +457,15 @@ class _FilterSheet extends StatelessWidget {
             spacing: CPSpacing.sm,
             runSpacing: CPSpacing.sm,
             children: ['All', ...CPCategories.challengeCategories].map((cat) {
-              final isSelected = selectedCategory == cat || (selectedCategory == null && cat == 'All');
+              final isSelected = selectedCategory == cat ||
+                  (selectedCategory == null && cat == 'All');
               return FilterChip(
                 label: Text(cat),
                 selected: isSelected,
-                onSelected: (s) => onApply(s ? (cat == 'All' ? null : cat) : null, selectedDifficulty),
+                onSelected: (s) => onApply(
+                  s ? (cat == 'All' ? null : cat) : null,
+                  selectedDifficulty,
+                ),
               );
             }).toList(),
           ),
@@ -442,11 +475,15 @@ class _FilterSheet extends StatelessWidget {
           Wrap(
             spacing: CPSpacing.sm,
             children: ['All', 'Easy', 'Medium', 'Hard'].map((diff) {
-              final isSelected = selectedDifficulty == diff || (selectedDifficulty == null && diff == 'All');
+              final isSelected = selectedDifficulty == diff ||
+                  (selectedDifficulty == null && diff == 'All');
               return FilterChip(
                 label: Text(diff),
                 selected: isSelected,
-                onSelected: (s) => onApply(selectedCategory, s ? (diff == 'All' ? null : diff) : null),
+                onSelected: (s) => onApply(
+                  selectedCategory,
+                  s ? (diff == 'All' ? null : diff) : null,
+                ),
               );
             }).toList(),
           ),
@@ -500,7 +537,8 @@ class _EmptyState extends StatelessWidget {
             const SizedBox(height: CPSpacing.lg),
             Text(title, style: CPTextStyles.headlineSmall),
             const SizedBox(height: CPSpacing.sm),
-            Text(subtitle, style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
+            Text(subtitle,
+                style: CPTextStyles.bodyMedium, textAlign: TextAlign.center),
             const SizedBox(height: CPSpacing.xl),
             action,
           ],
