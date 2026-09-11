@@ -1,8 +1,14 @@
 // CipherPoint Design System - Exact match to website
 // Colors from website: --bg-900: #0B1120, --primary: #5bb3ff, --teal: #6de0d0, etc.
+// ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+// Compatibility shim: WidgetStateProperty was added in Flutter 3.22.
+// On older SDKs (3.19) MaterialStateProperty is the equivalent.
+typedef _WSP<T> = MaterialStateProperty<T>;
+typedef _WS = MaterialState;
 
 class CPColors {
   // Background
@@ -273,11 +279,11 @@ ThemeData createCipherPointTheme() {
         ),
         textStyle: CPTextStyles.labelLarge,
       ).copyWith(
-        overlayColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.pressed)) {
+        overlayColor: _WSP.resolveWith((states) {
+          if (states.contains(_WS.pressed)) {
             return CPColors.primary.withOpacity(0.1);
           }
-          if (states.contains(MaterialState.hovered)) {
+          if (states.contains(_WS.hovered)) {
             return CPColors.primary.withOpacity(0.05);
           }
           return null;
@@ -378,9 +384,9 @@ ThemeData createCipherPointTheme() {
       surfaceTintColor: Colors.transparent,
       elevation: 0,
       indicatorColor: CPColors.primary.withOpacity(0.12),
-      labelTextStyle: MaterialStateProperty.all(CPTextStyles.labelSmall),
-      iconTheme: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      labelTextStyle: _WSP.all(CPTextStyles.labelSmall),
+      iconTheme: _WSP.resolveWith((states) {
+        if (states.contains(_WS.selected)) {
           return const IconThemeData(color: CPColors.primary, size: 24);
         }
         return const IconThemeData(color: CPColors.muted, size: 24);
@@ -450,34 +456,34 @@ ThemeData createCipherPointTheme() {
       circularTrackColor: CPColors.bg800,
     ),
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) return CPColors.success;
+      thumbColor: _WSP.resolveWith((states) {
+        if (states.contains(_WS.selected)) return CPColors.success;
         return CPColors.muted;
       }),
-      trackColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      trackColor: _WSP.resolveWith((states) {
+        if (states.contains(_WS.selected)) {
           return CPColors.success.withOpacity(0.3);
         }
         return CPColors.bg800;
       }),
-      trackOutlineColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) return CPColors.success;
+      trackOutlineColor: _WSP.resolveWith((states) {
+        if (states.contains(_WS.selected)) return CPColors.success;
         return CPColors.line;
       }),
     ),
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) return CPColors.primary;
+      fillColor: _WSP.resolveWith((states) {
+        if (states.contains(_WS.selected)) return CPColors.primary;
         return Colors.transparent;
       }),
-      checkColor: MaterialStateProperty.all(const Color(0xFF07111D)),
+      checkColor: _WSP.all(const Color(0xFF07111D)),
       side: const BorderSide(color: CPColors.line, width: 1.5),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CPRadius.xs)),
     ),
     radioTheme: RadioThemeData(
-      fillColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) return CPColors.primary;
+      fillColor: _WSP.resolveWith((states) {
+        if (states.contains(_WS.selected)) return CPColors.primary;
         return CPColors.muted;
       }),
     ),
