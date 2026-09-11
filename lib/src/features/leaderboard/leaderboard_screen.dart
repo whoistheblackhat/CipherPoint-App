@@ -163,7 +163,7 @@ class _CurrentUserCard extends StatelessWidget {
                   .map((badge) => Chip(
                         label: Text(badge, style: CPTextStyles.labelSmall),
                         backgroundColor: CPColors.bg800,
-                        side: BorderSide(color: CPColors.line),
+                        side: const BorderSide(color: CPColors.line),
                       ))
                   .toList(),
             ),
@@ -217,14 +217,15 @@ class _LeaderboardTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color rankColor;
-    if (rank == 1)
+    if (rank == 1) {
       rankColor = CPColors.gold;
-    else if (rank == 2)
+    } else if (rank == 2) {
       rankColor = const Color(0xFFB0B0B0);
-    else if (rank == 3)
+    } else if (rank == 3) {
       rankColor = const Color(0xFFCD7F32);
-    else
+    } else {
       rankColor = CPColors.muted;
+    }
 
     return Container(
       decoration: BoxDecoration(
@@ -237,7 +238,7 @@ class _LeaderboardTile extends StatelessWidget {
         ),
       ),
       child: ListTile(
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
           horizontal: CPSpacing.lg,
           vertical: CPSpacing.sm,
         ),
@@ -279,7 +280,8 @@ class _LeaderboardTile extends StatelessWidget {
             ? Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.monetization_on, size: 16, color: CPColors.amber),
+                  const Icon(Icons.monetization_on,
+                      size: 16, color: CPColors.amber),
                   const SizedBox(width: 4),
                   Text(
                     '${entry.coins}',

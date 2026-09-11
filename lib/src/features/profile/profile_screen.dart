@@ -11,7 +11,7 @@ import '../../shared/models/models.dart';
 
 final profileProvider =
     FutureProvider.family<Map<String, dynamic>, int>((ref, userId) async {
-  final ApiClient client = ref.watch(apiClientProvider);
+  final CPApiClient client = ref.watch(apiClientProvider);
   return client.getProfile(userId);
 });
 
@@ -56,7 +56,7 @@ class ProfileScreen extends ConsumerWidget {
                   const SizedBox(height: CPSpacing.xl),
                   _ProfileBadges(profile: profile),
                   const SizedBox(height: CPSpacing.xl),
-                  _ProfileActions(),
+                  const _ProfileActions(),
                   const SizedBox(height: CPSpacing.xxxl),
                 ]),
               ),
@@ -83,7 +83,7 @@ class _ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(CPSpacing.xl),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: CPColors.card,
         border: Border(bottom: BorderSide(color: CPColors.line)),
       ),
@@ -183,13 +183,6 @@ class _ProfileHeader extends StatelessWidget {
       ),
     );
   }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('user', user));
-    properties.add(DiagnosticsProperty('profile', profile));
-  }
 }
 
 class _StatColumn extends StatelessWidget {
@@ -197,7 +190,8 @@ class _StatColumn extends StatelessWidget {
   final String value;
   final Color color;
 
-  const _StatColumn({required this.label, required this.value, required this.color});
+  const _StatColumn(
+      {required this.label, required this.value, required this.color});
 
   @override
   Widget build(BuildContext context) => Column(
@@ -207,14 +201,6 @@ class _StatColumn extends StatelessWidget {
           Text(label, style: CPTextStyles.bodySmall),
         ],
       );
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('label', label));
-    properties.add(DiagnosticsProperty('value', value));
-    properties.add(DiagnosticsProperty('color', color));
-  }
 }
 
 class _ProfileStats extends StatelessWidget {
@@ -269,12 +255,6 @@ class _ProfileStats extends StatelessWidget {
       ),
     );
   }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('profile', profile));
-  }
 }
 
 class _StatItem extends StatelessWidget {
@@ -322,15 +302,6 @@ class _StatItem extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('icon', icon));
-    properties.add(DiagnosticsProperty('label', label));
-    properties.add(DiagnosticsProperty('value', value));
-    properties.add(DiagnosticsProperty('color', color));
   }
 }
 
@@ -383,12 +354,6 @@ class _ProfileBadges extends StatelessWidget {
         return Icons.star;
     }
   }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('profile', profile));
-  }
 }
 
 class _ProfileActions extends StatelessWidget {
@@ -433,11 +398,6 @@ class _ProfileActions extends StatelessWidget {
       ],
     );
   }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-  }
 }
 
 class _ProfileSkeleton extends StatelessWidget {
@@ -456,7 +416,7 @@ class _ProfileSkeleton extends StatelessWidget {
                 Container(
                   width: 100,
                   height: 100,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: CPColors.bg800,
                     shape: BoxShape.circle,
                   ),
@@ -472,7 +432,7 @@ class _ProfileSkeleton extends StatelessWidget {
                       child: Container(
                         height: 60,
                         color: CPColors.bg800,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
+                        margin: const EdgeInsets.symmetric(horizontal: 8),
                       ),
                     ),
                   ),
@@ -483,11 +443,6 @@ class _ProfileSkeleton extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
   }
 }
 
@@ -520,12 +475,5 @@ class _ErrorState extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('error', error));
-    properties.add(DiagnosticsProperty('onRetry', onRetry));
   }
 }

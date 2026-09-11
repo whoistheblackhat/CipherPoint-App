@@ -1,6 +1,5 @@
 // Auth State Management with Riverpod
 
-import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';

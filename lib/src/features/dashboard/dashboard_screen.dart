@@ -359,7 +359,7 @@ class _ChallengeCard extends StatelessWidget {
                   const SizedBox(height: CPSpacing.xs),
                   Row(
                     children: [
-                      Icon(Icons.flag, size: 14, color: CPColors.muted),
+                      const Icon(Icons.flag, size: 14, color: CPColors.muted),
                       const SizedBox(width: 4),
                       Text(
                         '${challenge.pointsReward ?? 0} pts',
@@ -368,7 +368,7 @@ class _ChallengeCard extends StatelessWidget {
                       const SizedBox(width: 12),
                       if (challenge.solvedCount != null &&
                           challenge.solvedCount! > 0) ...[
-                        Icon(Icons.check_circle,
+                        const Icon(Icons.check_circle,
                             size: 14, color: CPColors.success),
                         const SizedBox(width: 4),
                         Text(
@@ -531,7 +531,7 @@ class _DashboardSkeleton extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _SectionHeader(title: 'Recent Challenges', action: const SizedBox()),
+          const _SectionHeader(title: 'Recent Challenges', action: SizedBox()),
           const SizedBox(height: CPSpacing.md),
           SizedBox(
             height: 220,

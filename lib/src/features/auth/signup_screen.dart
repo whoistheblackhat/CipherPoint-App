@@ -81,8 +81,9 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                           textInputAction: TextInputAction.next,
                           validator: (v) {
                             if (v?.isEmpty ?? true) return 'Username required';
-                            if (v!.length < 3 || v.length > 20)
+                            if (v!.length < 3 || v.length > 20) {
                               return '3-20 characters';
+                            }
                             if (!RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(v)) {
                               return 'Alphanumeric only';
                             }

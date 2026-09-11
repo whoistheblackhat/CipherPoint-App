@@ -283,6 +283,7 @@ class _ChallengeHints extends ConsumerWidget {
       final result = await client.unlockHint(
           challengeId: challenge.id, hintNumber: number);
       final resp = CPHintUnlockResponse.fromJson(result);
+      if (!context.mounted) return;
       if (resp.success && resp.hint != null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Hint unlocked: ${resp.hint}')),
@@ -294,6 +295,7 @@ class _ChallengeHints extends ConsumerWidget {
         );
       }
     } catch (e) {
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Error: $e')),
       );
@@ -444,6 +446,7 @@ class _FlagSubmit extends ConsumerWidget {
                             flag: flagController.text.trim(),
                           );
                           final resp = CPFlagSubmitResponse.fromJson(result);
+                          if (!context.mounted) return;
                           if (resp.success) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -464,6 +467,7 @@ class _FlagSubmit extends ConsumerWidget {
                             );
                           }
                         } catch (e) {
+                          if (!context.mounted) return;
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('Error: $e')),
                           );

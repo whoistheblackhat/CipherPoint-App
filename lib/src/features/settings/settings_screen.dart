@@ -215,7 +215,7 @@ class SettingsScreen extends ConsumerWidget {
         backgroundColor: CPColors.panel,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CPRadius.xl),
-          side: BorderSide(color: CPColors.line),
+          side: const BorderSide(color: CPColors.line),
         ),
         title: Text('Change Password', style: CPTextStyles.headlineSmall),
         content: Form(
@@ -228,7 +228,8 @@ class SettingsScreen extends ConsumerWidget {
                 decoration:
                     const InputDecoration(labelText: 'Current Password'),
                 obscureText: true,
-                validator: (String? v) => v?.isEmpty ?? true ? 'Required' : null,
+                validator: (String? v) =>
+                    v?.isEmpty ?? true ? 'Required' : null,
               ),
               const SizedBox(height: CPSpacing.md),
               TextFormField(
@@ -278,7 +279,7 @@ class SettingsScreen extends ConsumerWidget {
         backgroundColor: CPColors.panel,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CPRadius.xl),
-          side: BorderSide(color: CPColors.line),
+          side: const BorderSide(color: CPColors.line),
         ),
         title: Text('Telegram Bot', style: CPTextStyles.headlineSmall),
         content: Column(
@@ -306,7 +307,7 @@ class SettingsScreen extends ConsumerWidget {
 
   Future<void> _updateNotification(
       WidgetRef ref, CPUser user, String field, bool value) async {
-    final ApiClient client = ref.read(apiClientProvider);
+    final CPApiClient client = ref.read(apiClientProvider);
     try {
       await client.updateProfile({field: value ? 1 : 0});
       ref.invalidate(authStateProvider);
@@ -317,7 +318,7 @@ class SettingsScreen extends ConsumerWidget {
 
   Future<void> _updatePrivacy(
       WidgetRef ref, CPUser user, String field, bool value) async {
-    final ApiClient client = ref.read(apiClientProvider);
+    final CPApiClient client = ref.read(apiClientProvider);
     try {
       await client.updateProfile({field: value ? 1 : 0});
       ref.invalidate(authStateProvider);
@@ -326,14 +327,13 @@ class SettingsScreen extends ConsumerWidget {
     }
   }
 
-  void _logout(BuildContext context, WidgetRef ref) =>
-      showDialog(
+  void _logout(BuildContext context, WidgetRef ref) => showDialog(
         context: context,
         builder: (context) => AlertDialog(
           backgroundColor: CPColors.panel,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(CPRadius.xl),
-            side: BorderSide(color: CPColors.line),
+            side: const BorderSide(color: CPColors.line),
           ),
           title: Text('Logout', style: CPTextStyles.headlineSmall),
           content: Text('Are you sure you want to logout?',
@@ -355,14 +355,13 @@ class SettingsScreen extends ConsumerWidget {
         ),
       );
 
-  void _showDeleteAccountDialog(BuildContext context) =>
-      showDialog(
+  void _showDeleteAccountDialog(BuildContext context) => showDialog(
         context: context,
         builder: (context) => AlertDialog(
           backgroundColor: CPColors.panel,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(CPRadius.xl),
-            side: BorderSide(color: CPColors.line),
+            side: const BorderSide(color: CPColors.line),
           ),
           title: Text(
             'Delete Account',
@@ -409,13 +408,6 @@ class _SettingsSection extends StatelessWidget {
       ],
     );
   }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('title', title));
-    properties.add(DiagnosticsProperty('children', children));
-  }
 }
 
 class _SwitchTile extends StatelessWidget {
@@ -447,21 +439,12 @@ class _SwitchTile extends StatelessWidget {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(CPRadius.md)),
           tileColor: CPColors.card,
-          contentPadding: EdgeInsets.symmetric(
+          contentPadding: const EdgeInsets.symmetric(
             horizontal: CPSpacing.lg,
             vertical: CPSpacing.sm,
           ),
         ),
       ),
     );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('title', title));
-    properties.add(DiagnosticsProperty('subtitle', subtitle));
-    properties.add(DiagnosticsProperty('value', value));
-    properties.add(DiagnosticsProperty('onChanged', onChanged));
   }
 }

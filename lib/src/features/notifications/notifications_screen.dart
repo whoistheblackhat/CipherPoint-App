@@ -46,7 +46,7 @@ class NotificationsScreen extends ConsumerWidget {
       body: notificationsAsync.when(
         data: (notifications) {
           if (notifications.isEmpty) {
-            return _EmptyState(
+            return const _EmptyState(
               icon: Icons.notifications_none,
               title: 'No notifications',
               subtitle: 'You\'re all caught up!',
@@ -174,7 +174,7 @@ class _NotificationTile extends StatelessWidget {
                           Container(
                             width: 8,
                             height: 8,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: CPColors.primary,
                               shape: BoxShape.circle,
                             ),

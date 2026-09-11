@@ -359,14 +359,14 @@ class _ChallengeListItem extends StatelessWidget {
                     const SizedBox(height: CPSpacing.xs),
                     Row(
                       children: [
-                        Icon(Icons.flag, size: 14, color: CPColors.muted),
+                        const Icon(Icons.flag, size: 14, color: CPColors.muted),
                         const SizedBox(width: 4),
                         Text('${challenge.pointsReward ?? 0} pts',
                             style: CPTextStyles.bodySmall),
                         const SizedBox(width: 12),
                         if (challenge.solvedCount != null &&
                             challenge.solvedCount! > 0) ...[
-                          Icon(Icons.check_circle,
+                          const Icon(Icons.check_circle,
                               size: 14, color: CPColors.success),
                           const SizedBox(width: 4),
                           Text(

@@ -297,7 +297,7 @@ class _IntelSkeleton extends StatelessWidget {
                   Container(
                     width: 28,
                     height: 28,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: CPColors.bg800,
                       shape: BoxShape.circle,
                     ),

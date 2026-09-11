@@ -363,13 +363,13 @@ ThemeData createCipherPointTheme() {
       titleTextStyle: CPTextStyles.headlineMedium,
       contentTextStyle: CPTextStyles.bodyMedium,
     ),
-    bottomSheetTheme: BottomSheetThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: CPColors.panel,
       surfaceTintColor: Colors.transparent,
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(CPRadius.xl)),
-        side: const BorderSide(color: CPColors.line),
+        side: BorderSide(color: CPColors.line),
       ),
       modalBackgroundColor: CPColors.panel,
     ),
@@ -408,7 +408,7 @@ ThemeData createCipherPointTheme() {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CPRadius.pill)),
     ),
-    dividerTheme: DividerThemeData(
+    dividerTheme: const DividerThemeData(
       color: CPColors.line,
       thickness: 1,
       space: 1,
@@ -455,8 +455,9 @@ ThemeData createCipherPointTheme() {
         return CPColors.muted;
       }),
       trackColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected))
+        if (states.contains(WidgetState.selected)) {
           return CPColors.success.withOpacity(0.3);
+        }
         return CPColors.bg800;
       }),
       trackOutlineColor: WidgetStateProperty.resolveWith((states) {
