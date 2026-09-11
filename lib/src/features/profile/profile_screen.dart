@@ -9,8 +9,7 @@ import '../../core/api/api_client.dart';
 import '../../core/theme/cipherpoint_theme.dart';
 import '../../shared/models/models.dart';
 
-final profileProvider =
-    FutureProvider<Map<String, dynamic>>((ref) async {
+final profileProvider = FutureProvider<Map<String, dynamic>>((ref) async {
   final CPApiClient client = ref.watch(apiClientProvider);
   await client.init();
   return client.getProfile();
