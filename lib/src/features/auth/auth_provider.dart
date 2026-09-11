@@ -11,8 +11,10 @@ class AuthState extends _$AuthState {
   @override
   FutureOr<CPUser?> build() async {
     final client = ref.watch(apiClientProvider);
-    // Always ensure client is initialized before use
     await client.init();
+    // Only call /auth/me if a token actually exists
+    final token = await client.getToken();
+    if (token == null) return null;
     try {
       final userData = await client.me();
       return CPUser.fromJson(userData);

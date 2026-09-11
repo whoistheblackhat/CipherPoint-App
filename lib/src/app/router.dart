@@ -18,21 +18,24 @@ import '../features/community/community_screen.dart';
 import '../features/notifications/notifications_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
-  final authState = ref.watch(authStateProvider);
+  // Use a notifier so GoRouter rebuilds when auth state changes
+  final notifier = _AuthNotifier();
 
-  return GoRouter(
+  final router = GoRouter(
     initialLocation: '/',
+    refreshListenable: notifier,
     redirect: (context, state) {
+      final authState = ref.read(authStateProvider);
+
+      // While loading, don't redirect — wait for auth to resolve
+      if (authState.isLoading) return null;
+
       final isLoggedIn = authState.hasValue && authState.value != null;
       final isAuthRoute = state.matchedLocation == '/login' ||
           state.matchedLocation == '/signup';
 
-      if (!isLoggedIn && !isAuthRoute) {
-        return '/login';
-      }
-      if (isLoggedIn && isAuthRoute) {
-        return '/';
-      }
+      if (!isLoggedIn && !isAuthRoute) return '/login';
+      if (isLoggedIn && isAuthRoute) return '/';
       return null;
     },
     routes: [
@@ -97,4 +100,16 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
     ),
   );
+
+  // Listen to auth state changes and notify router to re-evaluate redirect
+  ref.listen(authStateProvider, (_, __) => notifier.notify());
+
+  return router;
 });
+
+/// A simple ChangeNotifier that lets GoRouter listen to auth state changes.
+class _AuthNotifier extends ChangeNotifier {
+  _AuthNotifier();
+
+  void notify() => notifyListeners();
+}

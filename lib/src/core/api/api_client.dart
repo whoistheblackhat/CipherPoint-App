@@ -64,9 +64,12 @@ class CPApiClient {
 
     _dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
-        // Check connectivity
-        final connectivityResult = await _connectivity.checkConnectivity();
-        if (connectivityResult == ConnectivityResult.none) {
+        // Check connectivity — checkConnectivity returns List in newer versions
+        final results = await _connectivity.checkConnectivity();
+        final hasConnection = results is List
+            ? (results as List).any((r) => r != ConnectivityResult.none)
+            : results != ConnectivityResult.none;
+        if (!hasConnection) {
           handler.reject(DioException(
             requestOptions: options,
             type: DioExceptionType.connectionError,
