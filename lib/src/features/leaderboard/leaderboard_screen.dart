@@ -9,14 +9,11 @@ import '../../shared/models/models.dart';
 
 final leaderboardProvider = FutureProvider<CPLeaderboardResponse>((ref) async {
   final client = ref.watch(apiClientProvider);
+  await client.init();
+  // Backend returns a flat list, not a {users, current_user} object
   final result = await client.getLeaderboard(limit: 100);
-  final users = (result['users'] as List)
-      .map((e) => CPLeaderboardEntry.fromJson(e))
-      .toList();
-  final currentUser = result['current_user'] != null
-      ? CPLeaderboardEntry.fromJson(result['current_user'])
-      : null;
-  return CPLeaderboardResponse(users: users, currentUser: currentUser);
+  final users = result.map((e) => CPLeaderboardEntry.fromJson(e)).toList();
+  return CPLeaderboardResponse(users: users, currentUser: null);
 });
 
 class LeaderboardScreen extends ConsumerWidget {

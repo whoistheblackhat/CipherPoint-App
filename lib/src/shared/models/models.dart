@@ -15,26 +15,26 @@ class CPUser with _$CPUser {
     required String username,
     required String email,
     String? bio,
-    String? avatarUrl,
+    @JsonKey(name: 'avatar_url') String? avatarUrl,
     int? coins,
-    int? rankPoints,
-    int? solvedCount,
-    int? dailyStreak,
-    int? reportsApproved,
-    int? hintsUnlocked,
-    int? profileViews,
-    int? fastestSolveSeconds,
-    String? firstSolveAt,
-    bool? isAdmin,
-    bool? publicProfile,
-    bool? hideEmail,
-    String? telegramChatId,
-    bool? telegramNotifications,
-    String? createdAt,
-    String? updatedAt,
-    int? notifyNewChallenges,
-    int? notifyComments,
-    int? notifyMentions,
+    @JsonKey(name: 'rank_points') int? rankPoints,
+    @JsonKey(name: 'solved_count') int? solvedCount,
+    @JsonKey(name: 'daily_streak') int? dailyStreak,
+    @JsonKey(name: 'reports_approved') int? reportsApproved,
+    @JsonKey(name: 'hints_unlocked') int? hintsUnlocked,
+    @JsonKey(name: 'profile_views') int? profileViews,
+    @JsonKey(name: 'fastest_solve_seconds') int? fastestSolveSeconds,
+    @JsonKey(name: 'first_solve_at') String? firstSolveAt,
+    @JsonKey(name: 'is_admin') bool? isAdmin,
+    @JsonKey(name: 'public_profile') bool? publicProfile,
+    @JsonKey(name: 'hide_email') bool? hideEmail,
+    @JsonKey(name: 'telegram_chat_id') String? telegramChatId,
+    @JsonKey(name: 'telegram_notifications') bool? telegramNotifications,
+    @JsonKey(name: 'created_at') String? createdAt,
+    @JsonKey(name: 'updated_at') String? updatedAt,
+    @JsonKey(name: 'notify_new_challenges') int? notifyNewChallenges,
+    @JsonKey(name: 'notify_comments') int? notifyComments,
+    @JsonKey(name: 'notify_mentions') int? notifyMentions,
   }) = _CPUser;
 
   factory CPUser.fromJson(Map<String, dynamic> json) => _$CPUserFromJson(json);
@@ -48,22 +48,22 @@ class CPChallenge with _$CPChallenge {
     required String category,
     required String difficulty,
     required String description,
-    String? telegramFileId,
-    int? pointsReward,
-    int? solvedCount,
+    @JsonKey(name: 'telegram_file_id') String? telegramFileId,
+    @JsonKey(name: 'points_reward') int? pointsReward,
+    @JsonKey(name: 'solved_count') int? solvedCount,
     String? status,
-    bool? isCommunity,
-    int? createdBy,
-    int? commentsCount,
-    bool? hasWalkthrough,
-    String? createdAt,
-    String? hint1,
-    String? hint2,
-    int? hint1Cost,
-    int? hint2Cost,
+    @JsonKey(name: 'is_community') bool? isCommunity,
+    @JsonKey(name: 'created_by') int? createdBy,
+    @JsonKey(name: 'comments_count') int? commentsCount,
+    @JsonKey(name: 'has_walkthrough') bool? hasWalkthrough,
+    @JsonKey(name: 'created_at') String? createdAt,
+    @JsonKey(name: 'hint_1') String? hint1,
+    @JsonKey(name: 'hint_2') String? hint2,
+    @JsonKey(name: 'hint_1_cost') int? hint1Cost,
+    @JsonKey(name: 'hint_2_cost') int? hint2Cost,
     String? tags,
-    String? solutionWalkthrough,
-    bool? solvedByCurrentUser,
+    @JsonKey(name: 'solution_walkthrough') String? solutionWalkthrough,
+    @JsonKey(name: 'solved_by_current_user') bool? solvedByCurrentUser,
   }) = _CPChallenge;
 
   factory CPChallenge.fromJson(Map<String, dynamic> json) =>
@@ -74,13 +74,14 @@ class CPChallenge with _$CPChallenge {
 class CPLeaderboardEntry with _$CPLeaderboardEntry {
   const factory CPLeaderboardEntry({
     required int rank,
-    required int userId,
+    @JsonKey(name: 'user_id') required int userId,
     required String username,
-    int? rankPoints,
+    @JsonKey(name: 'rank_points') int? rankPoints,
     int? coins,
-    int? solvedCount,
+    @JsonKey(name: 'solved_count') int? solvedCount,
     List<String>? badges,
-    String? avatarUrl,
+    @JsonKey(name: 'avatar_url') String? avatarUrl,
+    @JsonKey(name: 'is_admin') bool? isAdmin,
     bool? isCurrentUser,
   }) = _CPLeaderboardEntry;
 
@@ -104,11 +105,11 @@ class CPFlagSubmitResponse with _$CPFlagSubmitResponse {
   const factory CPFlagSubmitResponse({
     required bool success,
     required String message,
-    int? pointsAwarded,
-    int? newRankPoints,
-    int? newCoins,
-    int? newSolvedCount,
-    List<String>? newBadges,
+    @JsonKey(name: 'coins_earned') int? pointsAwarded,
+    @JsonKey(name: 'rank_points') int? newRankPoints,
+    @JsonKey(name: 'total_coins') int? newCoins,
+    @JsonKey(name: 'solved_count') int? newSolvedCount,
+    @JsonKey(name: 'new_badges') List<String>? newBadges,
   }) = _CPFlagSubmitResponse;
 
   factory CPFlagSubmitResponse.fromJson(Map<String, dynamic> json) =>
@@ -117,13 +118,18 @@ class CPFlagSubmitResponse with _$CPFlagSubmitResponse {
 
 @freezed
 class CPHintUnlockResponse with _$CPHintUnlockResponse {
+  const CPHintUnlockResponse._();
   const factory CPHintUnlockResponse({
-    required bool success,
-    String? hint,
+    // Backend returns hint_text, not hint
+    @JsonKey(name: 'hint_text') String? hint,
     int? cost,
-    int? remainingCoins,
+    @JsonKey(name: 'remaining_coins') int? remainingCoins,
     String? message,
+    @JsonKey(name: 'hint_number') int? hintNumber,
   }) = _CPHintUnlockResponse;
+
+  // success field doesn't exist in backend response — derive it from hint presence
+  bool get success => hint != null;
 
   factory CPHintUnlockResponse.fromJson(Map<String, dynamic> json) =>
       _$CPHintUnlockResponseFromJson(json);
@@ -137,12 +143,12 @@ class CPIntelArticle with _$CPIntelArticle {
     required String category,
     required String content,
     String? summary,
-    String? telegramFileId,
-    int? authorId,
-    String? authorUsername,
-    String? createdAt,
-    String? updatedAt,
-    bool? isPublished,
+    @JsonKey(name: 'telegram_file_id') String? telegramFileId,
+    @JsonKey(name: 'author_id') int? authorId,
+    @JsonKey(name: 'author_username') String? authorUsername,
+    @JsonKey(name: 'created_at') String? createdAt,
+    @JsonKey(name: 'updated_at') String? updatedAt,
+    @JsonKey(name: 'is_published') bool? isPublished,
   }) = _CPIntelArticle;
 
   factory CPIntelArticle.fromJson(Map<String, dynamic> json) =>
@@ -153,14 +159,14 @@ class CPIntelArticle with _$CPIntelArticle {
 class CPComment with _$CPComment {
   const factory CPComment({
     required int id,
-    required int challengeId,
-    required int userId,
+    @JsonKey(name: 'challenge_id') required int challengeId,
+    @JsonKey(name: 'user_id') required int userId,
     required String username,
     required String body,
-    String? avatarUrl,
-    int? parentId,
-    String? createdAt,
-    String? updatedAt,
+    @JsonKey(name: 'avatar_url') String? avatarUrl,
+    @JsonKey(name: 'parent_id') int? parentId,
+    @JsonKey(name: 'created_at') String? createdAt,
+    @JsonKey(name: 'updated_at') String? updatedAt,
     List<CPComment>? replies,
   }) = _CPComment;
 
@@ -168,16 +174,27 @@ class CPComment with _$CPComment {
       _$CPCommentFromJson(json);
 }
 
-@freezed
-class CPAuthResponse with _$CPAuthResponse {
-  const factory CPAuthResponse({
-    required String token,
-    required CPUser user,
-    String? refreshToken,
-  }) = _CPAuthResponse;
+// CPAuthResponse is NOT a freezed class because the backend returns
+// user fields flat (not nested under a 'user' key).
+class CPAuthResponse {
+  final String token;
+  final String? refreshToken;
+  final CPUser user;
 
-  factory CPAuthResponse.fromJson(Map<String, dynamic> json) =>
-      _$CPAuthResponseFromJson(json);
+  const CPAuthResponse({
+    required this.token,
+    required this.user,
+    this.refreshToken,
+  });
+
+  factory CPAuthResponse.fromJson(Map<String, dynamic> json) {
+    return CPAuthResponse(
+      token: json['access_token'] as String,
+      refreshToken: json['refresh_token'] as String?,
+      // User fields are returned flat in the same response object
+      user: CPUser.fromJson(json),
+    );
+  }
 }
 
 @freezed

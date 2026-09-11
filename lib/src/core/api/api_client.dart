@@ -18,19 +18,24 @@ class CPApiClient {
 
   static const String baseUrl = 'https://cipherpoint.linkpc.net/api';
   static const String _tokenKey = 'cp_auth_token';
-  static const String _userKey = 'cp_user_data';
 
   late final Dio _dio;
   late final FlutterSecureStorage _storage;
   late final Connectivity _connectivity;
 
   String? _accessToken;
-  StreamController<void>? _logoutController;
+  bool _initialized = false;
 
-  Stream<void> get onLogout =>
-      _logoutController?.stream ?? const Stream.empty();
+  // Fix: initialize StreamController so onLogout works
+  final StreamController<void> _logoutController =
+      StreamController<void>.broadcast();
+
+  Stream<void> get onLogout => _logoutController.stream;
 
   Future<void> init() async {
+    if (_initialized) return;
+    _initialized = true;
+
     _storage = const FlutterSecureStorage(
       aOptions: AndroidOptions(encryptedSharedPreferences: true),
       iOptions: IOSOptions(
@@ -70,7 +75,7 @@ class CPApiClient {
           return;
         }
 
-        // Add auth header
+        // Add auth header (skip for auth endpoints)
         final token = await getToken();
         if (token != null && !options.path.contains('/auth/')) {
           options.headers['Authorization'] = 'Bearer $token';
@@ -80,7 +85,7 @@ class CPApiClient {
       onError: (error, handler) async {
         if (error.response?.statusCode == 401) {
           await clearAuth();
-          _logoutController?.add(null);
+          _logoutController.add(null);
         }
         handler.next(error);
       },
@@ -104,18 +109,6 @@ class CPApiClient {
   Future<void> clearAuth() async {
     _accessToken = null;
     await _storage.delete(key: _tokenKey);
-    await _storage.delete(key: _userKey);
-  }
-
-  Future<void> setUserData(Map<String, dynamic> user) async {
-    await _storage.write(key: _userKey, value: user.toString());
-  }
-
-  Future<Map<String, dynamic>?> getUserData() async {
-    final data = await _storage.read(key: _userKey);
-    if (data == null) return null;
-    // Parse the stored string back to map
-    return null; // Use proper JSON storage in production
   }
 
   // Auth endpoints
@@ -187,11 +180,12 @@ class CPApiClient {
     return resp.data;
   }
 
+  // Fix: correct endpoint is /challenges/submit not /flags/submit
   Future<Map<String, dynamic>> submitFlag({
     required int challengeId,
     required String flag,
   }) async {
-    final resp = await _dio.post('/flags/submit', data: {
+    final resp = await _dio.post('/challenges/submit', data: {
       'challenge_id': challengeId,
       'flag': flag,
     });
@@ -209,21 +203,21 @@ class CPApiClient {
     return resp.data;
   }
 
-  // Leaderboard
-  Future<Map<String, dynamic>> getLeaderboard({int limit = 100}) async {
+  // Leaderboard — backend returns a List directly
+  Future<List<Map<String, dynamic>>> getLeaderboard({int limit = 100}) async {
     final resp =
         await _dio.get('/leaderboard', queryParameters: {'limit': limit});
-    return resp.data;
+    return List<Map<String, dynamic>>.from(resp.data);
   }
 
-  // Profile
-  Future<Map<String, dynamic>> getProfile(int userId) async {
-    final resp = await _dio.get('/users/$userId');
+  // Profile — fix: correct endpoints
+  Future<Map<String, dynamic>> getProfile() async {
+    final resp = await _dio.get('/profile');
     return resp.data;
   }
 
   Future<Map<String, dynamic>> updateProfile(Map<String, dynamic> data) async {
-    final resp = await _dio.put('/auth/profile', data: data);
+    final resp = await _dio.put('/profile', data: data);
     return resp.data;
   }
 
@@ -263,17 +257,6 @@ class CPApiClient {
     return '$baseUrl/media/$fileId';
   }
 
-  // Notifications
-  Future<List<Map<String, dynamic>>> getNotifications({int limit = 50}) async {
-    final resp =
-        await _dio.get('/notifications', queryParameters: {'limit': limit});
-    return List<Map<String, dynamic>>.from(resp.data);
-  }
-
-  Future<void> markNotificationRead(int id) async {
-    await _dio.post('/notifications/$id/read');
-  }
-
   // Comments
   Future<List<Map<String, dynamic>>> getComments(int challengeId) async {
     final resp = await _dio.get('/challenges/$challengeId/comments');
@@ -303,10 +286,9 @@ class CPApiClient {
   }
 }
 
-// Riverpod provider
+// Fix: apiClientProvider now initializes the client before returning
 final apiClientProvider = Provider<CPApiClient>((ref) {
-  final client = CPApiClient();
-  return client;
+  return CPApiClient();
 });
 
 final initializedApiClientProvider = FutureProvider<CPApiClient>((ref) async {

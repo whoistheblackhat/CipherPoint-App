@@ -11,12 +11,13 @@ import '../../shared/models/models.dart';
 
 final dashboardDataProvider = FutureProvider<Map<String, dynamic>>((ref) async {
   final client = ref.watch(apiClientProvider);
+  await client.init();
   final challengesResult = await client.getChallenges(limit: 6);
   final leaderboardResult = await client.getLeaderboard(limit: 5);
   final intelResult = await client.getIntelArticles(limit: 4);
   return {
     'challenges': challengesResult.map((e) => CPChallenge.fromJson(e)).toList(),
-    'leaderboard': (leaderboardResult['users'] as List)
+    'leaderboard': leaderboardResult
         .map((e) => CPLeaderboardEntry.fromJson(e))
         .toList(),
     'intel': intelResult.map((e) => CPIntelArticle.fromJson(e)).toList(),

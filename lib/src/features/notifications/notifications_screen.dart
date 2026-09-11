@@ -5,13 +5,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../core/theme/cipherpoint_theme.dart';
-import '../../core/api/api_client.dart';
 import '../../shared/models/models.dart';
 
 final notificationsProvider = FutureProvider<List<CPNotification>>((ref) async {
-  final client = ref.watch(apiClientProvider);
-  final result = await client.getNotifications(limit: 100);
-  return result.map((e) => CPNotification.fromJson(e)).toList();
+  // Backend does not have a /notifications endpoint yet — return empty list
+  return [];
 });
 
 class NotificationsScreen extends ConsumerWidget {
@@ -83,23 +81,13 @@ class NotificationsScreen extends ConsumerWidget {
   }
 
   Future<void> _markAllRead(WidgetRef ref) async {
-    final client = ref.read(apiClientProvider);
-    final notifications = ref.read(notificationsProvider).value ?? [];
-    for (final n in notifications) {
-      if (n.read == false) {
-        try {
-          await client.markNotificationRead(n.id);
-        } catch (_) {}
-      }
-    }
+    // Notifications not yet implemented in backend
     ref.invalidate(notificationsProvider);
   }
 
   void _handleTap(BuildContext context, WidgetRef ref, CPNotification n) {
     if (n.read == false) {
-      final client = ref.read(apiClientProvider);
-      client.markNotificationRead(n.id);
-      ref.invalidate(notificationsProvider);
+      // markNotificationRead not yet implemented in backend
     }
     // Navigate based on notification type
     if (n.data != null) {

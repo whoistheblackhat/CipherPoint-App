@@ -273,11 +273,11 @@ ThemeData createCipherPointTheme() {
         ),
         textStyle: CPTextStyles.labelLarge,
       ).copyWith(
-        overlayColor: WidgetStateProperty.resolveWith((states) {
-          if (states.contains(WidgetState.pressed)) {
+        overlayColor: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.pressed)) {
             return CPColors.primary.withOpacity(0.1);
           }
-          if (states.contains(WidgetState.hovered)) {
+          if (states.contains(MaterialState.hovered)) {
             return CPColors.primary.withOpacity(0.05);
           }
           return null;
@@ -378,9 +378,9 @@ ThemeData createCipherPointTheme() {
       surfaceTintColor: Colors.transparent,
       elevation: 0,
       indicatorColor: CPColors.primary.withOpacity(0.12),
-      labelTextStyle: WidgetStateProperty.all(CPTextStyles.labelSmall),
-      iconTheme: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) {
+      labelTextStyle: MaterialStateProperty.all(CPTextStyles.labelSmall),
+      iconTheme: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) {
           return const IconThemeData(color: CPColors.primary, size: 24);
         }
         return const IconThemeData(color: CPColors.muted, size: 24);
@@ -450,34 +450,34 @@ ThemeData createCipherPointTheme() {
       circularTrackColor: CPColors.bg800,
     ),
     switchTheme: SwitchThemeData(
-      thumbColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) return CPColors.success;
+      thumbColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) return CPColors.success;
         return CPColors.muted;
       }),
-      trackColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) {
+      trackColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) {
           return CPColors.success.withOpacity(0.3);
         }
         return CPColors.bg800;
       }),
-      trackOutlineColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) return CPColors.success;
+      trackOutlineColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) return CPColors.success;
         return CPColors.line;
       }),
     ),
     checkboxTheme: CheckboxThemeData(
-      fillColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) return CPColors.primary;
+      fillColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) return CPColors.primary;
         return Colors.transparent;
       }),
-      checkColor: WidgetStateProperty.all(const Color(0xFF07111D)),
+      checkColor: MaterialStateProperty.all(const Color(0xFF07111D)),
       side: const BorderSide(color: CPColors.line, width: 1.5),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(CPRadius.xs)),
     ),
     radioTheme: RadioThemeData(
-      fillColor: WidgetStateProperty.resolveWith((states) {
-        if (states.contains(WidgetState.selected)) return CPColors.primary;
+      fillColor: MaterialStateProperty.resolveWith((states) {
+        if (states.contains(MaterialState.selected)) return CPColors.primary;
         return CPColors.muted;
       }),
     ),

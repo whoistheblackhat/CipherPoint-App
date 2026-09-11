@@ -11,6 +11,8 @@ class AuthState extends _$AuthState {
   @override
   FutureOr<CPUser?> build() async {
     final client = ref.watch(apiClientProvider);
+    // Always ensure client is initialized before use
+    await client.init();
     try {
       final userData = await client.me();
       return CPUser.fromJson(userData);
@@ -26,6 +28,7 @@ class AuthState extends _$AuthState {
   }) async {
     state = const AsyncLoading();
     final client = ref.read(apiClientProvider);
+    await client.init();
     try {
       final resp = await client.login(
         username: username,
@@ -51,6 +54,7 @@ class AuthState extends _$AuthState {
   }) async {
     state = const AsyncLoading();
     final client = ref.read(apiClientProvider);
+    await client.init();
     try {
       final resp = await client.signup(
         username: username,
@@ -77,6 +81,7 @@ class AuthState extends _$AuthState {
 
   Future<void> refreshUser() async {
     final client = ref.read(apiClientProvider);
+    await client.init();
     try {
       final userData = await client.me();
       state = AsyncData(CPUser.fromJson(userData));

@@ -10,9 +10,10 @@ import '../../core/theme/cipherpoint_theme.dart';
 import '../../shared/models/models.dart';
 
 final profileProvider =
-    FutureProvider.family<Map<String, dynamic>, int>((ref, userId) async {
+    FutureProvider<Map<String, dynamic>>((ref) async {
   final CPApiClient client = ref.watch(apiClientProvider);
-  return client.getProfile(userId);
+  await client.init();
+  return client.getProfile();
 });
 
 class ProfileScreen extends ConsumerWidget {
@@ -35,7 +36,7 @@ class ProfileScreen extends ConsumerWidget {
     }
 
     final AsyncValue<Map<String, dynamic>> profileAsync =
-        ref.watch(profileProvider(user.id));
+        ref.watch(profileProvider);
 
     return Scaffold(
       appBar: AppBar(title: const Text('Profile')),
